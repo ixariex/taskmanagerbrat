@@ -1,68 +1,72 @@
+"""CRUD operations for task categories."""
 
 import sqlite3
-from database.database import DB_PATH
+from typing import Optional
+
+from database.database import get_connection
 
 
-def add_category(name, color="#3498db"):
+def add_category(name: str, color: str = "#3498db") -> bool:
+    if not isinstance(name, str) or not name.strip():
+        raise ValueError("Category name cannot be empty")
+
     try:
-        with sqlite3.connect(DB_PATH) as conn:
+        with get_connection() as conn:
             conn.execute(
                 "INSERT INTO categories (name, color) VALUES (?, ?)",
-                (name, color)
+                (name.strip(), color or "#3498db"),
             )
         return True
-
     except sqlite3.IntegrityError:
+        # A category with this name already exists.
         return False
 
 
-def get_all_categories():
-    with sqlite3.connect(DB_PATH) as conn:
-        cursor = conn.cursor()
-        cursor.execute("SELECT * FROM categories")
+def get_all_categories() -> list[tuple]:
+    with get_connection() as conn:
+        cursor = conn.execute(
+            "SELECT id, name, color FROM categories ORDER BY name COLLATE NOCASE"
+        )
         return cursor.fetchall()
 
 
-def get_category_by_id(category_id):
-    with sqlite3.connect(DB_PATH) as conn:
-        cursor = conn.cursor()
-        cursor.execute(
-            "SELECT * FROM categories WHERE id = ?",
-            (category_id,)
+def get_category_by_id(category_id: int) -> Optional[tuple]:
+    with get_connection() as conn:
+        cursor = conn.execute(
+            "SELECT id, name, color FROM categories WHERE id = ?",
+            (category_id,),
         )
         return cursor.fetchone()
 
 
-def update_category(category_id, name, color=None):
-    with sqlite3.connect(DB_PATH) as conn:
-        cursor = conn.cursor()
+def update_category(
+    category_id: int, name: str, color: Optional[str] = None
+) -> bool:
+    if not isinstance(name, str) or not name.strip():
+        raise ValueError("Category name cannot be empty")
 
-        if color is not None:
-            cursor.execute(
-                "UPDATE categories SET name = ?, color = ? WHERE id = ?",
-                (name, color, category_id)
-            )
-        else:
-            cursor.execute(
-                "UPDATE categories SET name = ? WHERE id = ?",
-                (name, category_id)
-            )
+    try:
+        with get_connection() as conn:
+            if color is not None:
+                cursor = conn.execute(
+                    "UPDATE categories SET name = ?, color = ? WHERE id = ?",
+                    (name.strip(), color, category_id),
+                )
+            else:
+                cursor = conn.execute(
+                    "UPDATE categories SET name = ? WHERE id = ?",
+                    (name.strip(), category_id),
+                )
+            return cursor.rowcount > 0
+    except sqlite3.IntegrityError:
+        return False
 
-        return cursor.rowcount > 0
 
-
-def delete_category(category_id):
-    with sqlite3.connect(DB_PATH) as conn:
-        conn.execute("PRAGMA foreign_keys = ON")
-        cursor = conn.cursor()
-
-        cursor.execute(
+def delete_category(category_id: int) -> bool:
+    """Delete a category; linked tasks remain and get category_id=NULL."""
+    with get_connection() as conn:
+        cursor = conn.execute(
             "DELETE FROM categories WHERE id = ?",
-            (category_id,)
+            (category_id,),
         )
-
         return cursor.rowcount > 0
-
-
-
-

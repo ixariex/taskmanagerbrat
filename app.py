@@ -1,3 +1,4 @@
+"""Application entry point."""
 
 import sys
 
@@ -7,16 +8,14 @@ from database.database import create_db
 from ui.main_window import MainWindow
 
 
-def main():
+def main() -> int:
     create_db()
-
     app = QApplication(sys.argv)
-
+    app.setApplicationName("TaskForge")
     window = MainWindow()
     window.show()
-
-    sys.exit(app.exec())
+    return app.exec()
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
