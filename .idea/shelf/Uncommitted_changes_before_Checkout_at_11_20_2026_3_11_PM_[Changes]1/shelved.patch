@@ -1,0 +1,18 @@
+Index: .idea/taskmanagerbrat.iml
+===================================================================
+diff --git a/.idea/taskmanagerbrat.iml b/.idea/taskmanagerbrat.iml
+deleted file mode 100644
+--- a/.idea/taskmanagerbrat.iml	(revision 868ee76c239a8a0af8a7ba274eb126815bdd79ea)
++++ /dev/null	(revision 868ee76c239a8a0af8a7ba274eb126815bdd79ea)
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="PYTHON_MODULE" version="4">
+-  <component name="NewModuleRootManager">
+-    <content url="file://$MODULE_DIR$">
+-      <excludeFolder url="file://$MODULE_DIR$/.venv" />
+-    </content>
+-    <orderEntry type="jdk" jdkName="uv (taskmanagerbrat)" jdkType="Python SDK" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
