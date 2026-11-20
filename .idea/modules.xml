@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/taskmanagerbrat.iml" filepath="$PROJECT_DIR$/.idea/taskmanagerbrat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/TaskForge_rebuilt.iml" filepath="$PROJECT_DIR$/.idea/TaskForge_rebuilt.iml" />
     </modules>
   </component>
 </project>
