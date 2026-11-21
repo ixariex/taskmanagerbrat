@@ -1,4 +1,4 @@
-"""Business logic between the UI and database repositories."""
+
 
 from typing import Optional
 
@@ -42,7 +42,6 @@ def create_task(
     )
 
     if category_id is not None and not assign_category(task_id, category_id):
-        # Avoid leaving an unassigned task if the category vanished meanwhile.
         delete_task(task_id)
         raise RuntimeError("Could not assign the selected category")
 

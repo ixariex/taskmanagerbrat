@@ -1,4 +1,4 @@
-"""CRUD operations for tasks."""
+
 
 from datetime import date
 from typing import Optional
@@ -69,7 +69,6 @@ def add_task(
 
 
 def get_all_tasks() -> list[tuple]:
-    """Return tasks as tuples in the stable order expected by the UI/tests."""
     with get_connection() as conn:
         cursor = conn.execute(
             """
@@ -140,7 +139,6 @@ def delete_task(task_id: int) -> bool:
 
 
 def assign_category(task_id: int, category_id: Optional[int]) -> bool:
-    """Assign a category, or remove it by passing None."""
     with get_connection() as conn:
         task = conn.execute(
             "SELECT id FROM tasks WHERE id = ?", (task_id,)

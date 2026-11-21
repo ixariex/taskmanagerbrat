@@ -1,4 +1,4 @@
-"""Dialog used for creating and editing tasks."""
+
 
 from PyQt6.QtCore import QDate
 from PyQt6.QtWidgets import (

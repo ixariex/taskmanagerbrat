@@ -1,4 +1,4 @@
-"""CRUD operations for task categories."""
+
 
 import sqlite3
 from typing import Optional
@@ -18,7 +18,6 @@ def add_category(name: str, color: str = "#3498db") -> bool:
             )
         return True
     except sqlite3.IntegrityError:
-        # A category with this name already exists.
         return False
 
 
@@ -65,6 +64,11 @@ def update_category(
 def delete_category(category_id: int) -> bool:
     """Delete a category; linked tasks remain and get category_id=NULL."""
     with get_connection() as conn:
+
+        conn.execute(
+            "UPDATE tasks SET category_id = NULL WHERE category_id = ?",
+            (category_id,),
+        )
         cursor = conn.execute(
             "DELETE FROM categories WHERE id = ?",
             (category_id,),
