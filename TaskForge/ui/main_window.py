@@ -39,6 +39,8 @@ from core.task_manager import (
 from ui.category_dialog import CategoryDialog
 from ui.task_dialog import TaskDialog
 
+from ui.pomodoro_widget import PomodoroWidget
+
 
 STYLESHEET = """
 QWidget#appRoot { background: #f4f6fa; color: #20283a; font-family: "Segoe UI"; font-size: 14px; }
@@ -85,6 +87,8 @@ class MainWindow(QMainWindow):
 
         self.create_sidebar(root_layout)
         self.create_content(root_layout)
+
+
         self.switch_page(0)
 
     # ---------- Layout ----------
@@ -105,13 +109,29 @@ class MainWindow(QMainWindow):
         layout.addSpacing(35)
 
         self.nav_buttons = []
-        for index, page_name in enumerate(["Dashboard", "My Tasks", "Categories", "Completed"]):
+
+        pages = [
+            "Dashboard",
+            "My Tasks",
+            "Categories",
+            "Completed",
+            "Pomodoro"
+        ]
+
+        for index, page_name in enumerate(pages):
             button = QPushButton("   " + page_name)
             button.setObjectName("navButton")
             button.setCheckable(True)
-            button.clicked.connect(lambda checked=False, i=index: self.switch_page(i))
+
+            button.clicked.connect(
+                lambda checked=False, i=index: self.switch_page(i)
+            )
+
             layout.addWidget(button)
             self.nav_buttons.append(button)
+
+        # Temporary debugging
+
 
         layout.addStretch()
         version = QLabel("TaskForge v1.1")
@@ -152,7 +172,14 @@ class MainWindow(QMainWindow):
         self.tasks_page = self.build_tasks_page()
         self.categories_page = self.build_categories_page()
         self.completed_page = self.build_completed_page()
-        for page in (self.dashboard_page, self.tasks_page, self.categories_page, self.completed_page):
+        self.pomodoro_page = PomodoroWidget()
+        for page in (
+                self.dashboard_page,
+                self.tasks_page,
+                self.categories_page,
+                self.completed_page,
+                self.pomodoro_page
+        ):
             self.stack.addWidget(page)
         layout.addWidget(self.stack)
         root_layout.addWidget(content)
@@ -284,7 +311,9 @@ class MainWindow(QMainWindow):
             ("My Tasks", "Search, filter and manage your tasks"),
             ("Categories", "Organize tasks with color-coded categories"),
             ("Completed", "Your finished tasks"),
+            ("Pomodoro", "Focus on what matters")
         ]
+
         if not 0 <= index < len(pages):
             return
         self.stack.setCurrentIndex(index)
