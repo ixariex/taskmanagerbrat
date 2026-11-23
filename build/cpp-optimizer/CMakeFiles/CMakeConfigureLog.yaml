@@ -1,0 +1,1448 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineSystem.cmake:218 (message)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      The system is: Windows - 10.0.19045 - AMD64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:501 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:538 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "F:\\githubproj\\taskmanagerbrat\\.venv\\Scripts"
+        - "C:\\Users\\ixa\\Desktop\\TaskForge_rebuilt\\.venv\\Scripts"
+        - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.3.9-hotspot\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Cloudflare\\Cloudflare WARP\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubCopilotCLI\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\copilot-shim"
+        - "C:\\Users\\ixa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubDesktop\\bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.14.60+43b635718 for .NET Framework
+      Build started 11/23/2026 3:45:39 PM.
+      
+      Project "F:\\githubproj\\taskmanagerbrat\\build\\cpp-optimizer\\CMakeFiles\\4.4.4\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> F:\\githubproj\\taskmanagerbrat\\build\\cpp-optimizer\\CMakeFiles\\4.4.4\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "F:\\githubproj\\taskmanagerbrat\\build\\cpp-optimizer\\CMakeFiles\\4.4.4\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.62
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        F:/githubproj/taskmanagerbrat/build/cpp-optimizer/CMakeFiles/4.4.4/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:64 (__resolve_tool_path)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:102 (__resolve_linker_path)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/"
+      - "C:/Users/ixa/Desktop/TaskForge_rebuilt/.venv/Scripts/"
+      - "C:/Program Files/Eclipse Adoptium/jdk-21.0.3.9-hotspot/bin/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Cloudflare/Cloudflare WARP/"
+      - "C:/Program Files/GitHub CLI/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/ixa/AppData/Local/GitHubCopilotCLI/"
+      - "C:/Users/ixa/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim/"
+      - "C:/Users/ixa/AppData/Roaming/npm/"
+      - "C:/Users/ixa/AppData/Local/GitHubDesktop/bin/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.com"
+    found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
+    search_context:
+      ENV{PATH}:
+        - "F:\\githubproj\\taskmanagerbrat\\.venv\\Scripts"
+        - "C:\\Users\\ixa\\Desktop\\TaskForge_rebuilt\\.venv\\Scripts"
+        - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.3.9-hotspot\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Cloudflare\\Cloudflare WARP\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubCopilotCLI\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\copilot-shim"
+        - "C:\\Users\\ixa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubDesktop\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:64 (__resolve_tool_path)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:103 (__resolve_linker_path)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lld-link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/"
+      - "C:/Users/ixa/Desktop/TaskForge_rebuilt/.venv/Scripts/"
+      - "C:/Program Files/Eclipse Adoptium/jdk-21.0.3.9-hotspot/bin/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Cloudflare/Cloudflare WARP/"
+      - "C:/Program Files/GitHub CLI/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/ixa/AppData/Local/GitHubCopilotCLI/"
+      - "C:/Users/ixa/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim/"
+      - "C:/Users/ixa/AppData/Roaming/npm/"
+      - "C:/Users/ixa/AppData/Local/GitHubDesktop/bin/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lld-link"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/lld-link.com"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/lld-link.exe"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/lld-link"
+      - "C:/Users/ixa/Desktop/TaskForge_rebuilt/.venv/Scripts/lld-link.com"
+      - "C:/Users/ixa/Desktop/TaskForge_rebuilt/.venv/Scripts/lld-link.exe"
+      - "C:/Users/ixa/Desktop/TaskForge_rebuilt/.venv/Scripts/lld-link"
+      - "C:/Program Files/Eclipse Adoptium/jdk-21.0.3.9-hotspot/bin/lld-link.com"
+      - "C:/Program Files/Eclipse Adoptium/jdk-21.0.3.9-hotspot/bin/lld-link.exe"
+      - "C:/Program Files/Eclipse Adoptium/jdk-21.0.3.9-hotspot/bin/lld-link"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/lld-link.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/lld-link.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/lld-link"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link"
+      - "C:/Windows/System32/lld-link.com"
+      - "C:/Windows/System32/lld-link.exe"
+      - "C:/Windows/System32/lld-link"
+      - "C:/Windows/lld-link.com"
+      - "C:/Windows/lld-link.exe"
+      - "C:/Windows/lld-link"
+      - "C:/Windows/System32/wbem/lld-link.com"
+      - "C:/Windows/System32/wbem/lld-link.exe"
+      - "C:/Windows/System32/wbem/lld-link"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link"
+      - "C:/Windows/System32/OpenSSH/lld-link.com"
+      - "C:/Windows/System32/OpenSSH/lld-link.exe"
+      - "C:/Windows/System32/OpenSSH/lld-link"
+      - "C:/Program Files/dotnet/lld-link.com"
+      - "C:/Program Files/dotnet/lld-link.exe"
+      - "C:/Program Files/dotnet/lld-link"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/lld-link.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/lld-link.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/lld-link"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link"
+      - "C:/Program Files/Cloudflare/Cloudflare WARP/lld-link.com"
+      - "C:/Program Files/Cloudflare/Cloudflare WARP/lld-link.exe"
+      - "C:/Program Files/Cloudflare/Cloudflare WARP/lld-link"
+      - "C:/Program Files/GitHub CLI/lld-link.com"
+      - "C:/Program Files/GitHub CLI/lld-link.exe"
+      - "C:/Program Files/GitHub CLI/lld-link"
+      - "C:/Program Files/Git/cmd/lld-link.com"
+      - "C:/Program Files/Git/cmd/lld-link.exe"
+      - "C:/Program Files/Git/cmd/lld-link"
+      - "C:/Program Files/nodejs/lld-link.com"
+      - "C:/Program Files/nodejs/lld-link.exe"
+      - "C:/Program Files/nodejs/lld-link"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Launcher/lld-link.com"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Launcher/lld-link.exe"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Launcher/lld-link"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WindowsApps/lld-link.com"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WindowsApps/lld-link"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe/lld-link.com"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe/lld-link.exe"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe/lld-link"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe/lld-link.com"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe/lld-link.exe"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe/lld-link"
+      - "C:/Users/ixa/AppData/Local/GitHubCopilotCLI/lld-link.com"
+      - "C:/Users/ixa/AppData/Local/GitHubCopilotCLI/lld-link.exe"
+      - "C:/Users/ixa/AppData/Local/GitHubCopilotCLI/lld-link"
+      - "C:/Users/ixa/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim/lld-link.com"
+      - "C:/Users/ixa/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim/lld-link.exe"
+      - "C:/Users/ixa/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim/lld-link"
+      - "C:/Users/ixa/AppData/Roaming/npm/lld-link.com"
+      - "C:/Users/ixa/AppData/Roaming/npm/lld-link.exe"
+      - "C:/Users/ixa/AppData/Roaming/npm/lld-link"
+      - "C:/Users/ixa/AppData/Local/GitHubDesktop/bin/lld-link.com"
+      - "C:/Users/ixa/AppData/Local/GitHubDesktop/bin/lld-link.exe"
+      - "C:/Users/ixa/AppData/Local/GitHubDesktop/bin/lld-link"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "F:\\githubproj\\taskmanagerbrat\\.venv\\Scripts"
+        - "C:\\Users\\ixa\\Desktop\\TaskForge_rebuilt\\.venv\\Scripts"
+        - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.3.9-hotspot\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Cloudflare\\Cloudflare WARP\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubCopilotCLI\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\copilot-shim"
+        - "C:\\Users\\ixa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubDesktop\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/"
+      - "C:/Users/ixa/Desktop/TaskForge_rebuilt/.venv/Scripts/"
+      - "C:/Program Files/Eclipse Adoptium/jdk-21.0.3.9-hotspot/bin/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Cloudflare/Cloudflare WARP/"
+      - "C:/Program Files/GitHub CLI/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/ixa/AppData/Local/GitHubCopilotCLI/"
+      - "C:/Users/ixa/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim/"
+      - "C:/Users/ixa/AppData/Roaming/npm/"
+      - "C:/Users/ixa/AppData/Local/GitHubDesktop/bin/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.com"
+    found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/link.exe"
+    search_context:
+      ENV{PATH}:
+        - "F:\\githubproj\\taskmanagerbrat\\.venv\\Scripts"
+        - "C:\\Users\\ixa\\Desktop\\TaskForge_rebuilt\\.venv\\Scripts"
+        - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.3.9-hotspot\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Cloudflare\\Cloudflare WARP\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubCopilotCLI\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\copilot-shim"
+        - "C:\\Users\\ixa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubDesktop\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_MT"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "mt"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/"
+      - "C:/Users/ixa/Desktop/TaskForge_rebuilt/.venv/Scripts/"
+      - "C:/Program Files/Eclipse Adoptium/jdk-21.0.3.9-hotspot/bin/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Cloudflare/Cloudflare WARP/"
+      - "C:/Program Files/GitHub CLI/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/ixa/AppData/Local/GitHubCopilotCLI/"
+      - "C:/Users/ixa/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim/"
+      - "C:/Users/ixa/AppData/Roaming/npm/"
+      - "C:/Users/ixa/AppData/Local/GitHubDesktop/bin/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/mt"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/mt.com"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/mt.exe"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/mt"
+      - "C:/Users/ixa/Desktop/TaskForge_rebuilt/.venv/Scripts/mt.com"
+      - "C:/Users/ixa/Desktop/TaskForge_rebuilt/.venv/Scripts/mt.exe"
+      - "C:/Users/ixa/Desktop/TaskForge_rebuilt/.venv/Scripts/mt"
+      - "C:/Program Files/Eclipse Adoptium/jdk-21.0.3.9-hotspot/bin/mt.com"
+      - "C:/Program Files/Eclipse Adoptium/jdk-21.0.3.9-hotspot/bin/mt.exe"
+      - "C:/Program Files/Eclipse Adoptium/jdk-21.0.3.9-hotspot/bin/mt"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/mt.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/mt.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/mt"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/mt.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/mt.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/mt"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/mt.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/mt.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/mt"
+      - "C:/Windows/System32/mt.com"
+      - "C:/Windows/System32/mt.exe"
+      - "C:/Windows/System32/mt"
+      - "C:/Windows/mt.com"
+      - "C:/Windows/mt.exe"
+      - "C:/Windows/mt"
+      - "C:/Windows/System32/wbem/mt.com"
+      - "C:/Windows/System32/wbem/mt.exe"
+      - "C:/Windows/System32/wbem/mt"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt"
+      - "C:/Windows/System32/OpenSSH/mt.com"
+      - "C:/Windows/System32/OpenSSH/mt.exe"
+      - "C:/Windows/System32/OpenSSH/mt"
+      - "C:/Program Files/dotnet/mt.com"
+      - "C:/Program Files/dotnet/mt.exe"
+      - "C:/Program Files/dotnet/mt"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/mt.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/mt.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/mt"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt"
+      - "C:/Program Files/Cloudflare/Cloudflare WARP/mt.com"
+      - "C:/Program Files/Cloudflare/Cloudflare WARP/mt.exe"
+      - "C:/Program Files/Cloudflare/Cloudflare WARP/mt"
+      - "C:/Program Files/GitHub CLI/mt.com"
+      - "C:/Program Files/GitHub CLI/mt.exe"
+      - "C:/Program Files/GitHub CLI/mt"
+      - "C:/Program Files/Git/cmd/mt.com"
+      - "C:/Program Files/Git/cmd/mt.exe"
+      - "C:/Program Files/Git/cmd/mt"
+      - "C:/Program Files/nodejs/mt.com"
+      - "C:/Program Files/nodejs/mt.exe"
+      - "C:/Program Files/nodejs/mt"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Launcher/mt.com"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Launcher/mt.exe"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Launcher/mt"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WindowsApps/mt.com"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WindowsApps/mt.exe"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WindowsApps/mt"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe/mt.com"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe/mt.exe"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe/mt"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe/mt.com"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe/mt.exe"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe/mt"
+      - "C:/Users/ixa/AppData/Local/GitHubCopilotCLI/mt.com"
+      - "C:/Users/ixa/AppData/Local/GitHubCopilotCLI/mt.exe"
+      - "C:/Users/ixa/AppData/Local/GitHubCopilotCLI/mt"
+      - "C:/Users/ixa/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim/mt.com"
+      - "C:/Users/ixa/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim/mt.exe"
+      - "C:/Users/ixa/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim/mt"
+      - "C:/Users/ixa/AppData/Roaming/npm/mt.com"
+      - "C:/Users/ixa/AppData/Roaming/npm/mt.exe"
+      - "C:/Users/ixa/AppData/Roaming/npm/mt"
+      - "C:/Users/ixa/AppData/Local/GitHubDesktop/bin/mt.com"
+      - "C:/Users/ixa/AppData/Local/GitHubDesktop/bin/mt.exe"
+      - "C:/Users/ixa/AppData/Local/GitHubDesktop/bin/mt"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "F:\\githubproj\\taskmanagerbrat\\.venv\\Scripts"
+        - "C:\\Users\\ixa\\Desktop\\TaskForge_rebuilt\\.venv\\Scripts"
+        - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.3.9-hotspot\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Cloudflare\\Cloudflare WARP\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubCopilotCLI\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\copilot-shim"
+        - "C:\\Users\\ixa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubDesktop\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lib"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/"
+      - "C:/Users/ixa/Desktop/TaskForge_rebuilt/.venv/Scripts/"
+      - "C:/Program Files/Eclipse Adoptium/jdk-21.0.3.9-hotspot/bin/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Cloudflare/Cloudflare WARP/"
+      - "C:/Program Files/GitHub CLI/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/ixa/AppData/Local/GitHubCopilotCLI/"
+      - "C:/Users/ixa/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim/"
+      - "C:/Users/ixa/AppData/Roaming/npm/"
+      - "C:/Users/ixa/AppData/Local/GitHubDesktop/bin/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lib.com"
+    found: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lib.exe"
+    search_context:
+      ENV{PATH}:
+        - "F:\\githubproj\\taskmanagerbrat\\.venv\\Scripts"
+        - "C:\\Users\\ixa\\Desktop\\TaskForge_rebuilt\\.venv\\Scripts"
+        - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.3.9-hotspot\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Cloudflare\\Cloudflare WARP\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubCopilotCLI\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\copilot-shim"
+        - "C:\\Users\\ixa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubDesktop\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineRCCompiler.cmake:40 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/Platform/Windows-MSVC.cmake:592 (enable_language)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/Platform/Windows-MSVC.cmake:565 (__windows_compiler_msvc_enable_rc)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/Platform/Windows-MSVC-CXX.cmake:6 (__windows_compiler_msvc)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeCXXInformation.cmake:48 (include)"
+      - "CMakeLists.txt:4 (project)"
+    mode: "program"
+    variable: "CMAKE_RC_COMPILER"
+    description: "RC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "rc"
+    candidate_directories:
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/"
+      - "C:/Users/ixa/Desktop/TaskForge_rebuilt/.venv/Scripts/"
+      - "C:/Program Files/Eclipse Adoptium/jdk-21.0.3.9-hotspot/bin/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Cloudflare/Cloudflare WARP/"
+      - "C:/Program Files/GitHub CLI/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/ixa/AppData/Local/GitHubCopilotCLI/"
+      - "C:/Users/ixa/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim/"
+      - "C:/Users/ixa/AppData/Roaming/npm/"
+      - "C:/Users/ixa/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files/TaskOptimizer/bin/"
+      - "C:/Program Files/TaskOptimizer/sbin/"
+      - "C:/Program Files/TaskOptimizer/"
+    searched_directories:
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/rc.com"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/rc.exe"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/rc"
+      - "C:/Users/ixa/Desktop/TaskForge_rebuilt/.venv/Scripts/rc.com"
+      - "C:/Users/ixa/Desktop/TaskForge_rebuilt/.venv/Scripts/rc.exe"
+      - "C:/Users/ixa/Desktop/TaskForge_rebuilt/.venv/Scripts/rc"
+      - "C:/Program Files/Eclipse Adoptium/jdk-21.0.3.9-hotspot/bin/rc.com"
+      - "C:/Program Files/Eclipse Adoptium/jdk-21.0.3.9-hotspot/bin/rc.exe"
+      - "C:/Program Files/Eclipse Adoptium/jdk-21.0.3.9-hotspot/bin/rc"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/rc.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/rc.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/rc"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/rc.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/rc.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/rc"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/rc.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/rc.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/rc"
+      - "C:/Windows/System32/rc.com"
+      - "C:/Windows/System32/rc.exe"
+      - "C:/Windows/System32/rc"
+      - "C:/Windows/rc.com"
+      - "C:/Windows/rc.exe"
+      - "C:/Windows/rc"
+      - "C:/Windows/System32/wbem/rc.com"
+      - "C:/Windows/System32/wbem/rc.exe"
+      - "C:/Windows/System32/wbem/rc"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc"
+      - "C:/Windows/System32/OpenSSH/rc.com"
+      - "C:/Windows/System32/OpenSSH/rc.exe"
+      - "C:/Windows/System32/OpenSSH/rc"
+      - "C:/Program Files/dotnet/rc.com"
+      - "C:/Program Files/dotnet/rc.exe"
+      - "C:/Program Files/dotnet/rc"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/rc.com"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/rc.exe"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/rc"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc"
+      - "C:/Program Files/Cloudflare/Cloudflare WARP/rc.com"
+      - "C:/Program Files/Cloudflare/Cloudflare WARP/rc.exe"
+      - "C:/Program Files/Cloudflare/Cloudflare WARP/rc"
+      - "C:/Program Files/GitHub CLI/rc.com"
+      - "C:/Program Files/GitHub CLI/rc.exe"
+      - "C:/Program Files/GitHub CLI/rc"
+      - "C:/Program Files/Git/cmd/rc.com"
+      - "C:/Program Files/Git/cmd/rc.exe"
+      - "C:/Program Files/Git/cmd/rc"
+      - "C:/Program Files/nodejs/rc.com"
+      - "C:/Program Files/nodejs/rc.exe"
+      - "C:/Program Files/nodejs/rc"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Launcher/rc.com"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Launcher/rc.exe"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Launcher/rc"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WindowsApps/rc.com"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WindowsApps/rc.exe"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WindowsApps/rc"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe/rc.com"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe/rc.exe"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe/rc"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe/rc.com"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe/rc.exe"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe/rc"
+      - "C:/Users/ixa/AppData/Local/GitHubCopilotCLI/rc.com"
+      - "C:/Users/ixa/AppData/Local/GitHubCopilotCLI/rc.exe"
+      - "C:/Users/ixa/AppData/Local/GitHubCopilotCLI/rc"
+      - "C:/Users/ixa/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim/rc.com"
+      - "C:/Users/ixa/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim/rc.exe"
+      - "C:/Users/ixa/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim/rc"
+      - "C:/Users/ixa/AppData/Roaming/npm/rc.com"
+      - "C:/Users/ixa/AppData/Roaming/npm/rc.exe"
+      - "C:/Users/ixa/AppData/Roaming/npm/rc"
+      - "C:/Users/ixa/AppData/Local/GitHubDesktop/bin/rc.com"
+      - "C:/Users/ixa/AppData/Local/GitHubDesktop/bin/rc.exe"
+      - "C:/Users/ixa/AppData/Local/GitHubDesktop/bin/rc"
+      - "C:/Program Files/bin/rc.com"
+      - "C:/Program Files/bin/rc.exe"
+      - "C:/Program Files/bin/rc"
+      - "C:/Program Files/sbin/rc.com"
+      - "C:/Program Files/sbin/rc.exe"
+      - "C:/Program Files/sbin/rc"
+      - "C:/Program Files/rc.com"
+      - "C:/Program Files/rc.exe"
+      - "C:/Program Files/rc"
+      - "C:/Program Files (x86)/bin/rc.com"
+      - "C:/Program Files (x86)/bin/rc.exe"
+      - "C:/Program Files (x86)/bin/rc"
+      - "C:/Program Files (x86)/sbin/rc.com"
+      - "C:/Program Files (x86)/sbin/rc.exe"
+      - "C:/Program Files (x86)/sbin/rc"
+      - "C:/Program Files (x86)/rc.com"
+      - "C:/Program Files (x86)/rc.exe"
+      - "C:/Program Files (x86)/rc"
+      - "C:/Program Files/CMake/bin/rc.com"
+      - "C:/Program Files/CMake/bin/rc.exe"
+      - "C:/Program Files/CMake/bin/rc"
+      - "C:/Program Files/CMake/sbin/rc.com"
+      - "C:/Program Files/CMake/sbin/rc.exe"
+      - "C:/Program Files/CMake/sbin/rc"
+      - "C:/Program Files/CMake/rc.com"
+      - "C:/Program Files/CMake/rc.exe"
+      - "C:/Program Files/CMake/rc"
+      - "C:/Program Files/TaskOptimizer/bin/rc.com"
+      - "C:/Program Files/TaskOptimizer/bin/rc.exe"
+      - "C:/Program Files/TaskOptimizer/bin/rc"
+      - "C:/Program Files/TaskOptimizer/sbin/rc.com"
+      - "C:/Program Files/TaskOptimizer/sbin/rc.exe"
+      - "C:/Program Files/TaskOptimizer/sbin/rc"
+      - "C:/Program Files/TaskOptimizer/rc.com"
+      - "C:/Program Files/TaskOptimizer/rc.exe"
+      - "C:/Program Files/TaskOptimizer/rc"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "F:\\githubproj\\taskmanagerbrat\\.venv\\Scripts"
+        - "C:\\Users\\ixa\\Desktop\\TaskForge_rebuilt\\.venv\\Scripts"
+        - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.3.9-hotspot\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Cloudflare\\Cloudflare WARP\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubCopilotCLI\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\copilot-shim"
+        - "C:\\Users\\ixa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubDesktop\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/TaskOptimizer"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files/TaskOptimizer"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerABI.cmake:123 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "F:/githubproj/taskmanagerbrat/build/cpp-optimizer/CMakeFiles/CMakeScratch/TryCompile-2k11s4"
+      binary: "F:/githubproj/taskmanagerbrat/build/cpp-optimizer/CMakeFiles/CMakeScratch/TryCompile-2k11s4"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: false
+      stdout: |
+        Change Dir: 'F:/githubproj/taskmanagerbrat/build/cpp-optimizer/CMakeFiles/CMakeScratch/TryCompile-2k11s4'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_32e28.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.60+43b635718 for .NET Framework
+        Build started 11/23/2026 3:45:39 PM.
+        
+        Project "F:\\githubproj\\taskmanagerbrat\\build\\cpp-optimizer\\CMakeFiles\\CMakeScratch\\TryCompile-2k11s4\\cmTC_32e28.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "F:\\githubproj\\taskmanagerbrat\\build\\cpp-optimizer\\CMakeFiles\\CMakeScratch\\TryCompile-2k11s4\\Debug\\".
+          Creating directory "cmTC_32e28.dir\\Debug\\cmTC_32e28.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_32e28.dir\\Debug\\cmTC_32e28.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_32e28.dir\\Debug\\cmTC_32e28.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_32e28.dir\\Debug\\\\" /Fd"cmTC_32e28.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.4\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35230 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_32e28.dir\\Debug\\\\" /Fd"cmTC_32e28.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.4\\Modules\\CMakeCXXCompilerABI.cpp"
+          CMakeCXXCompilerABI.cpp
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"F:\\githubproj\\taskmanagerbrat\\build\\cpp-optimizer\\CMakeFiles\\CMakeScratch\\TryCompile-2k11s4\\Debug\\cmTC_32e28.exe" /INCREMENTAL /ILK:"cmTC_32e28.dir\\Debug\\cmTC_32e28.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:/githubproj/taskmanagerbrat/build/cpp-optimizer/CMakeFiles/CMakeScratch/TryCompile-2k11s4/Debug/cmTC_32e28.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"F:/githubproj/taskmanagerbrat/build/cpp-optimizer/CMakeFiles/CMakeScratch/TryCompile-2k11s4/Debug/cmTC_32e28.lib" /MACHINE:X64  /machine:x64 cmTC_32e28.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_32e28.vcxproj -> F:\\githubproj\\taskmanagerbrat\\build\\cpp-optimizer\\CMakeFiles\\CMakeScratch\\TryCompile-2k11s4\\Debug\\cmTC_32e28.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_32e28.dir\\Debug\\cmTC_32e28.tlog\\unsuccessfulbuild".
+          Touching "cmTC_32e28.dir\\Debug\\cmTC_32e28.tlog\\cmTC_32e28.lastbuildstate".
+        Done Building Project "F:\\githubproj\\taskmanagerbrat\\build\\cpp-optimizer\\CMakeFiles\\CMakeScratch\\TryCompile-2k11s4\\cmTC_32e28.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.43
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerABI.cmake:291 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        link line: [  C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"F:\\githubproj\\taskmanagerbrat\\build\\cpp-optimizer\\CMakeFiles\\CMakeScratch\\TryCompile-2k11s4\\Debug\\cmTC_32e28.exe" /INCREMENTAL /ILK:"cmTC_32e28.dir\\Debug\\cmTC_32e28.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:/githubproj/taskmanagerbrat/build/cpp-optimizer/CMakeFiles/CMakeScratch/TryCompile-2k11s4/Debug/cmTC_32e28.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"F:/githubproj/taskmanagerbrat/build/cpp-optimizer/CMakeFiles/CMakeScratch/TryCompile-2k11s4/Debug/cmTC_32e28.lib" /MACHINE:X64  /machine:x64 cmTC_32e28.dir\\Debug\\CMakeCXXCompilerABI.obj] ==> linker [C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe]
+        linker tool for 'CXX': C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe 
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/Internal/CMakeDetermineLinkerId.cmake:41 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeDetermineCompilerABI.cmake:337 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:4 (project)"
+    message: |
+      Running the CXX compiler's linker: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.44.35230.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FindPython/Support.cmake:2631 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FindPython.cmake:749 (include)"
+      - "CMakeLists.txt:9 (find_package)"
+    mode: "program"
+    variable: "_Python_EXECUTABLE_DEBUG"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "python3.14_d"
+      - "python3_d"
+      - "python_d"
+    candidate_directories:
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/"
+    searched_directories:
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/python3.14_d.com"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/python3.14_d.exe"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/python3.14_d"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/python3_d.com"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/python3_d.exe"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/python3_d"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/python_d.com"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/python_d.exe"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/python_d"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "F:\\githubproj\\taskmanagerbrat\\.venv\\Scripts"
+        - "C:\\Users\\ixa\\Desktop\\TaskForge_rebuilt\\.venv\\Scripts"
+        - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.3.9-hotspot\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Cloudflare\\Cloudflare WARP\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubCopilotCLI\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\copilot-shim"
+        - "C:\\Users\\ixa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubDesktop\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/TaskOptimizer"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files/TaskOptimizer"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FindPython/Support.cmake:3399 (find_library)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FindPython.cmake:749 (include)"
+      - "CMakeLists.txt:9 (find_package)"
+    mode: "library"
+    variable: "_Python_LIBRARY_RELEASE"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "python314"
+      - "python3.14"
+    candidate_directories:
+      - "F:/githubproj/taskmanagerbrat/.venv/lib/"
+      - "F:/githubproj/taskmanagerbrat/.venv/libs/"
+      - "F:/githubproj/taskmanagerbrat/.venv/lib/python3.14/config-3.14/"
+      - "F:/githubproj/taskmanagerbrat/.venv/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Python314/lib/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Python314/libs/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Python314/lib/python3.14/config-3.14/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Python314/"
+    searched_directories:
+      - "F:/githubproj/taskmanagerbrat/.venv/lib/"
+      - "F:/githubproj/taskmanagerbrat/.venv/lib/"
+      - "F:/githubproj/taskmanagerbrat/.venv/libs/"
+      - "F:/githubproj/taskmanagerbrat/.venv/libs/"
+      - "F:/githubproj/taskmanagerbrat/.venv/lib/python3.14/config-3.14/"
+      - "F:/githubproj/taskmanagerbrat/.venv/lib/python3.14/config-3.14/"
+      - "F:/githubproj/taskmanagerbrat/.venv/"
+      - "F:/githubproj/taskmanagerbrat/.venv/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Python314/lib/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Python314/lib/"
+    found: "C:/Users/ixa/AppData/Local/Programs/Python/Python314/libs/python314.lib"
+    search_context:
+      ENV{PATH}:
+        - "F:\\githubproj\\taskmanagerbrat\\.venv\\Scripts"
+        - "C:\\Users\\ixa\\Desktop\\TaskForge_rebuilt\\.venv\\Scripts"
+        - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.3.9-hotspot\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Cloudflare\\Cloudflare WARP\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubCopilotCLI\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\copilot-shim"
+        - "C:\\Users\\ixa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubDesktop\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/TaskOptimizer"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files/TaskOptimizer"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "C:/Program Files/TaskOptimizer/bin"
+        - "C:/Program Files/CMake/bin"
+        - "/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FindPython/Support.cmake:3595 (find_library)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FindPython.cmake:749 (include)"
+      - "CMakeLists.txt:9 (find_package)"
+    mode: "library"
+    variable: "_Python_LIBRARY_DEBUG"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "python314_d"
+    candidate_directories:
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Python314/libs/"
+    searched_directories:
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Python314/libs/"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "F:\\githubproj\\taskmanagerbrat\\.venv\\Scripts"
+        - "C:\\Users\\ixa\\Desktop\\TaskForge_rebuilt\\.venv\\Scripts"
+        - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.3.9-hotspot\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Cloudflare\\Cloudflare WARP\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubCopilotCLI\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\copilot-shim"
+        - "C:\\Users\\ixa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubDesktop\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/TaskOptimizer"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files/TaskOptimizer"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "C:/Program Files/TaskOptimizer/bin"
+        - "C:/Program Files/CMake/bin"
+        - "/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FindPython/Support.cmake:1531 (find_library)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FindPython/Support.cmake:3613 (_python_find_runtime_library)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FindPython.cmake:749 (include)"
+      - "CMakeLists.txt:9 (find_package)"
+    mode: "library"
+    variable: "_Python_RUNTIME_LIBRARY_RELEASE"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "python314"
+      - "python3.14"
+    candidate_directories:
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Python314/libs/bin/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Python314/libs/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Python314/bin/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Python314/"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/bin/"
+      - "F:/githubproj/taskmanagerbrat/.venv/Scripts/"
+      - "C:/Users/ixa/Desktop/TaskForge_rebuilt/.venv/Scripts/bin/"
+      - "C:/Users/ixa/Desktop/TaskForge_rebuilt/.venv/Scripts/"
+      - "C:/Program Files/Eclipse Adoptium/jdk-21.0.3.9-hotspot/bin/bin/"
+      - "C:/Program Files/Eclipse Adoptium/jdk-21.0.3.9-hotspot/bin/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/bin/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/bin/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/java8path/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/bin/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/bin/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/bin/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/bin/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/bin/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/bin/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files/dotnet/bin/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/bin/"
+      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/bin/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Cloudflare/Cloudflare WARP/bin/"
+      - "C:/Program Files/Cloudflare/Cloudflare WARP/"
+      - "C:/Program Files/GitHub CLI/bin/"
+      - "C:/Program Files/GitHub CLI/"
+      - "C:/Program Files/Git/cmd/bin/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/nodejs/bin/"
+      - "C:/Program Files/nodejs/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Launcher/bin/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Launcher/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WindowsApps/bin/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe/bin/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe/bin/"
+      - "C:/Users/ixa/AppData/Local/Microsoft/WinGet/Packages/astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe/"
+      - "C:/Users/ixa/AppData/Local/GitHubCopilotCLI/bin/"
+      - "C:/Users/ixa/AppData/Local/GitHubCopilotCLI/"
+      - "C:/Users/ixa/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim/bin/"
+      - "C:/Users/ixa/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim/"
+      - "C:/Users/ixa/AppData/Roaming/npm/bin/"
+      - "C:/Users/ixa/AppData/Roaming/npm/"
+      - "C:/Users/ixa/AppData/Local/GitHubDesktop/bin/bin/"
+      - "C:/Users/ixa/AppData/Local/GitHubDesktop/bin/"
+      - "C:/Program Files/lib/bin/"
+      - "C:/Program Files/lib/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/lib/bin/"
+      - "C:/Program Files (x86)/lib/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/lib/bin/"
+      - "C:/Program Files/CMake/lib/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files/TaskOptimizer/lib/bin/"
+      - "C:/Program Files/TaskOptimizer/lib/"
+      - "C:/Program Files/TaskOptimizer/bin/"
+      - "C:/Program Files/TaskOptimizer/"
+      - "C:/Program Files/TaskOptimizer/bin/bin/"
+      - "C:/Program Files/TaskOptimizer/bin/"
+      - "C:/Program Files/CMake/bin/bin/"
+      - "C:/Program Files/CMake/bin/"
+      - "/bin/bin/"
+      - "/bin/"
+    searched_directories:
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Python314/libs/bin/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Python314/libs/bin/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Python314/libs/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Python314/libs/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Python314/bin/"
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Python314/bin/"
+    found: "C:/Users/ixa/AppData/Local/Programs/Python/Python314/python314.dll"
+    search_context:
+      ENV{PATH}:
+        - "F:\\githubproj\\taskmanagerbrat\\.venv\\Scripts"
+        - "C:\\Users\\ixa\\Desktop\\TaskForge_rebuilt\\.venv\\Scripts"
+        - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.3.9-hotspot\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Cloudflare\\Cloudflare WARP\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubCopilotCLI\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\copilot-shim"
+        - "C:\\Users\\ixa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubDesktop\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/TaskOptimizer"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files/TaskOptimizer"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "C:/Program Files/TaskOptimizer/bin"
+        - "C:/Program Files/CMake/bin"
+        - "/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FindPython/Support.cmake:3934 (find_path)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FindPython.cmake:749 (include)"
+      - "CMakeLists.txt:9 (find_package)"
+    mode: "path"
+    variable: "_Python_INCLUDE_DIR"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "Python.h"
+    candidate_directories:
+      - "C:/Users/ixa/AppData/Local/Programs/Python/Python314/Include/"
+    found: "C:/Users/ixa/AppData/Local/Programs/Python/Python314/Include/"
+    search_context:
+      ENV{PATH}:
+        - "F:\\githubproj\\taskmanagerbrat\\.venv\\Scripts"
+        - "C:\\Users\\ixa\\Desktop\\TaskForge_rebuilt\\.venv\\Scripts"
+        - "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.3.9-hotspot\\bin"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Cloudflare\\Cloudflare WARP\\"
+        - "C:\\Program Files\\GitHub CLI\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\Microsoft\\WinGet\\Packages\\astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubCopilotCLI\\"
+        - "C:\\Users\\ixa\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\copilot-shim"
+        - "C:\\Users\\ixa\\AppData\\Roaming\\npm"
+        - "C:\\Users\\ixa\\AppData\\Local\\GitHubDesktop\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files/TaskOptimizer"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files/TaskOptimizer"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "F:/githubproj/taskmanagerbrat/.venv/Lib/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:338 (check_cxx_compiler_flag)"
+      - "F:/githubproj/taskmanagerbrat/.venv/Lib/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:414 (_pybind11_return_if_cxx_and_linker_flags_work)"
+      - "F:/githubproj/taskmanagerbrat/.venv/Lib/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake:448 (_pybind11_generate_lto)"
+      - "F:/githubproj/taskmanagerbrat/.venv/Lib/site-packages/pybind11/share/cmake/pybind11/pybind11Config.cmake:257 (include)"
+      - "CMakeLists.txt:22 (find_package)"
+    checks:
+      - "Performing Test HAS_MSVC_GL_LTCG"
+    directories:
+      source: "F:/githubproj/taskmanagerbrat/build/cpp-optimizer/CMakeFiles/CMakeScratch/TryCompile-qxu1vr"
+      binary: "F:/githubproj/taskmanagerbrat/build/cpp-optimizer/CMakeFiles/CMakeScratch/TryCompile-qxu1vr"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAS_MSVC_GL_LTCG"
+      cached: true
+      stdout: |
+        Change Dir: 'F:/githubproj/taskmanagerbrat/build/cpp-optimizer/CMakeFiles/CMakeScratch/TryCompile-qxu1vr'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_431cc.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.60+43b635718 for .NET Framework
+        Build started 11/23/2026 3:45:40 PM.
+        
+        Project "F:\\githubproj\\taskmanagerbrat\\build\\cpp-optimizer\\CMakeFiles\\CMakeScratch\\TryCompile-qxu1vr\\cmTC_431cc.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "F:\\githubproj\\taskmanagerbrat\\build\\cpp-optimizer\\CMakeFiles\\CMakeScratch\\TryCompile-qxu1vr\\Debug\\".
+          Creating directory "cmTC_431cc.dir\\Debug\\cmTC_431cc.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_431cc.dir\\Debug\\cmTC_431cc.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_431cc.dir\\Debug\\cmTC_431cc.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /GL /D _MBCS /D WIN32 /D _WINDOWS /D HAS_MSVC_GL_LTCG /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_431cc.dir\\Debug\\\\" /Fd"cmTC_431cc.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "F:\\githubproj\\taskmanagerbrat\\build\\cpp-optimizer\\CMakeFiles\\CMakeScratch\\TryCompile-qxu1vr\\src.cxx"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35230 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /GL /D _MBCS /D WIN32 /D _WINDOWS /D HAS_MSVC_GL_LTCG /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_431cc.dir\\Debug\\\\" /Fd"cmTC_431cc.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "F:\\githubproj\\taskmanagerbrat\\build\\cpp-optimizer\\CMakeFiles\\CMakeScratch\\TryCompile-qxu1vr\\src.cxx"
+          src.cxx
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"F:\\githubproj\\taskmanagerbrat\\build\\cpp-optimizer\\CMakeFiles\\CMakeScratch\\TryCompile-qxu1vr\\Debug\\cmTC_431cc.exe" /INCREMENTAL /ILK:"cmTC_431cc.dir\\Debug\\cmTC_431cc.ilk" /NOLOGO "-LTCG" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:/githubproj/taskmanagerbrat/build/cpp-optimizer/CMakeFiles/CMakeScratch/TryCompile-qxu1vr/Debug/cmTC_431cc.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"F:/githubproj/taskmanagerbrat/build/cpp-optimizer/CMakeFiles/CMakeScratch/TryCompile-qxu1vr/Debug/cmTC_431cc.lib" /MACHINE:X64  /machine:x64 cmTC_431cc.dir\\Debug\\src.obj
+        LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification [F:\\githubproj\\taskmanagerbrat\\build\\cpp-optimizer\\CMakeFiles\\CMakeScratch\\TryCompile-qxu1vr\\cmTC_431cc.vcxproj]
+          Generating code
+          Finished generating code
+          cmTC_431cc.vcxproj -> F:\\githubproj\\taskmanagerbrat\\build\\cpp-optimizer\\CMakeFiles\\CMakeScratch\\TryCompile-qxu1vr\\Debug\\cmTC_431cc.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_431cc.dir\\Debug\\cmTC_431cc.tlog\\unsuccessfulbuild".
+          Touching "cmTC_431cc.dir\\Debug\\cmTC_431cc.tlog\\cmTC_431cc.lastbuildstate".
+        Done Building Project "F:\\githubproj\\taskmanagerbrat\\build\\cpp-optimizer\\CMakeFiles\\CMakeScratch\\TryCompile-qxu1vr\\cmTC_431cc.vcxproj" (default targets).
+        
+        Build succeeded.
+        
+        "F:\\githubproj\\taskmanagerbrat\\build\\cpp-optimizer\\CMakeFiles\\CMakeScratch\\TryCompile-qxu1vr\\cmTC_431cc.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification [F:\\githubproj\\taskmanagerbrat\\build\\cpp-optimizer\\CMakeFiles\\CMakeScratch\\TryCompile-qxu1vr\\cmTC_431cc.vcxproj]
+        
+            1 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.42
+        
+      exitCode: 0
+...

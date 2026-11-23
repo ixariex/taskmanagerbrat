@@ -1,0 +1,10 @@
+^F:\GITHUBPROJ\TASKMANAGERBRAT\CPP\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SF:/githubproj/taskmanagerbrat/cpp -BF:/githubproj/taskmanagerbrat/build/cpp-optimizer --check-stamp-file F:/githubproj/taskmanagerbrat/build/cpp-optimizer/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
