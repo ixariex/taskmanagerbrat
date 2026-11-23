@@ -34,54 +34,97 @@ class HistoryWidget(QWidget):
     # =====================================
 
     def setup_ui(self):
-
         self.setStyleSheet("""
             QWidget#historyPage {
-                background-color: #f4f6fa;
-                color: #20283a;
+                background-color: #100D16;
+                color: #F2EAF9;
                 font-family: "Segoe UI";
             }
 
             QFrame#historyStatCard {
-                background-color: white;
-                border: 1px solid #e5e9f0;
-                border-radius: 12px;
+                background-color: #1B1624;
+                border: 1px solid #3A2D48;
+                border-radius: 14px;
+            }
+
+            QFrame#historyStatCard:hover {
+                border: 1px solid #725A91;
+                background-color: #211A2D;
             }
 
             QLabel#statTitle {
-                color: #7b8497;
+                color: #B8A9C9;
                 font-size: 13px;
             }
 
             QLabel#statValue {
-                color: #172033;
-                font-size: 26px;
+                color: #D6C8F4;
+                font-size: 27px;
                 font-weight: bold;
             }
 
             QLabel#historySectionTitle {
-                font-size: 17px;
+                font-size: 19px;
                 font-weight: bold;
-                color: #172033;
+                color: #E9C5DF;
             }
 
             QListWidget {
-                background-color: white;
-                border: 1px solid #e5e9f0;
-                border-radius: 10px;
-                padding: 8px;
+                background-color: #191421;
+                color: #F2EAF9;
+                border: 1px solid #352A42;
+                border-radius: 12px;
+                padding: 10px;
+                outline: none;
             }
 
             QListWidget::item {
-                padding: 14px;
-                border-bottom: 1px solid #f0f2f6;
+                background-color: transparent;
+                color: #E9DFF1;
+                padding: 15px;
+                border-bottom: 1px solid #30273A;
+                border-radius: 7px;
+            }
+
+            QListWidget::item:hover {
+                background-color: #282034;
             }
 
             QListWidget::item:selected {
-                background-color: #e9efff;
-                color: #294bb5;
+                background-color: #392B4D;
+                color: #E5D6FF;
+            }
+
+            QScrollBar:vertical {
+                background-color: #15111C;
+                width: 9px;
+                margin: 3px;
+                border: none;
+            }
+
+            QScrollBar::handle:vertical {
+                background-color: #58446D;
+                border-radius: 4px;
+                min-height: 25px;
+            }
+
+            QScrollBar::handle:vertical:hover {
+                background-color: #A58AF5;
+            }
+
+            QScrollBar::add-line:vertical,
+            QScrollBar::sub-line:vertical {
+                height: 0px;
+            }
+
+            QToolTip {
+                background-color: #292136;
+                color: #F2EAF9;
+                border: 1px solid #8D6BD0;
+                padding: 5px;
             }
         """)
+
 
         main_layout = QVBoxLayout(self)
         main_layout.setSpacing(20)

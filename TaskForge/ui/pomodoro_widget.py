@@ -1,5 +1,8 @@
 
+from datetime import datetime
+
 from PyQt6.QtCore import QTimer, Qt
+from PyQt6.QtGui import QFont
 from PyQt6.QtWidgets import (
     QWidget,
     QVBoxLayout,
@@ -8,13 +11,12 @@ from PyQt6.QtWidgets import (
     QPushButton,
     QProgressBar,
     QFrame,
-    QComboBox
+    QComboBox,
+    QSizePolicy,
+    QMessageBox,
 )
 
 from core.task_manager import get_tasks
-from datetime import datetime
-from PyQt6.QtWidgets import QMessageBox
-
 from database.pomodoro_repository import add_completed_session
 
 
@@ -37,6 +39,7 @@ class PomodoroWidget(QWidget):
 
         # Selected task
         self.selected_task_id = None
+
         # Active work session
         self.session_task_id = None
         self.session_task_title = None
@@ -58,207 +61,349 @@ class PomodoroWidget(QWidget):
 
     def setup_ui(self):
 
+        self.setObjectName("pomodoroPage")
+
         self.setStyleSheet("""
-            QWidget {
-                background-color: #f4f6fa;
-                color: #20283a;
+            QWidget#pomodoroPage {
+                background-color: #100D16;
+                color: #F2EAF9;
                 font-family: "Segoe UI";
             }
 
             QFrame#timerCard {
-                background-color: white;
-                border: 1px solid #e5e9f0;
+                background-color: #1B1624;
+                border: 1px solid #3A2D48;
                 border-radius: 18px;
             }
 
-            QLabel#timerTitle {
-                font-size: 24px;
+            QFrame#taskPanel {
+                background-color: #15111C;
+                border: 1px solid #352A42;
+                border-radius: 10px;
+            }
+
+            QLabel#eyebrow {
+                color: #A58AF5;
+                font-size: 10px;
                 font-weight: bold;
-                color: #172033;
+                letter-spacing: 2px;
+            }
+
+            QLabel#timerTitle {
+                color: #F2EAF9;
+                font-size: 23px;
+                font-weight: bold;
+            }
+
+            QLabel#timerSubtitle {
+                color: #A69AAF;
+                font-size: 12px;
+            }
+
+            QLabel#taskHeading {
+                color: #A69AAF;
+                font-size: 10px;
+                font-weight: bold;
+                letter-spacing: 1px;
+            }
+
+            QLabel#taskInfo {
+                color: #BDAED0;
+                font-size: 12px;
             }
 
             QLabel#modeLabel {
-                font-size: 15px;
+                color: #D6C8F4;
+                background-color: #30263B;
+                border: 1px solid #493957;
+                border-radius: 10px;
+                padding: 7px 18px;
+                font-size: 11px;
                 font-weight: bold;
-                color: #3658d4;
+                letter-spacing: 1px;
             }
 
             QLabel#timerDisplay {
-                font-size: 76px;
+                color: #E9C5DF;
                 font-weight: bold;
-                color: #172033;
+            }
+
+            QLabel#timeHint {
+                color: #A69AAF;
+                font-size: 10px;
+                letter-spacing: 1px;
             }
 
             QLabel#sessionLabel {
-                font-size: 14px;
-                color: #7b8497;
+                color: #C7B5D6;
+                font-size: 12px;
             }
 
             QLabel#messageLabel {
-                font-size: 13px;
-                color: #64748b;
+                color: #A69AAF;
+                font-size: 12px;
             }
 
             QComboBox {
-                background-color: #f8f9fc;
-                border: 1px solid #dce2ec;
+                background-color: #211A2D;
+                color: #F2EAF9;
+                border: 1px solid #493957;
                 border-radius: 8px;
-                padding: 10px;
-                min-width: 220px;
+                padding: 9px 11px;
+                min-height: 20px;
             }
 
-            QProgressBar {
+            QComboBox:hover {
+                border-color: #A58AF5;
+            }
+
+            QComboBox:focus {
+                border: 1px solid #A58AF5;
+            }
+
+            QComboBox:disabled {
+                color: #887D98;
+                background-color: #191421;
+            }
+
+            QComboBox::drop-down {
                 border: none;
-                border-radius: 5px;
-                background-color: #e8edf5;
-                height: 10px;
+                width: 24px;
             }
 
-            QProgressBar::chunk {
-                background-color: #3658d4;
-                border-radius: 5px;
+            QComboBox QAbstractItemView {
+                background-color: #211A2D;
+                color: #F2EAF9;
+                border: 1px solid #493957;
+                selection-background-color: #48345F;
+                selection-color: white;
+                padding: 5px;
             }
 
             QPushButton {
-                border: none;
+                background-color: #292236;
+                color: #E9DDF5;
+                border: 1px solid #443653;
                 border-radius: 8px;
-                padding: 12px 25px;
-                font-size: 14px;
+                padding: 10px 18px;
+                font-size: 12px;
                 font-weight: bold;
             }
 
+            QPushButton:hover {
+                background-color: #392E4B;
+                border-color: #A58AF5;
+            }
+
+            QPushButton:pressed {
+                background-color: #48345F;
+            }
+
+            QPushButton:disabled {
+                background-color: #211A2D;
+                color: #766B83;
+                border-color: #30263B;
+            }
+
             QPushButton#startButton {
-                background-color: #3658d4;
-                color: white;
+                background-color: #A58AF5;
+                color: #160F20;
+                border: none;
+                font-weight: bold;
             }
 
             QPushButton#startButton:hover {
-                background-color: #2948b8;
+                background-color: #BBA8FA;
             }
 
             QPushButton#resetButton {
-                background-color: #e9edf5;
-                color: #26334d;
+                background-color: #30263B;
+                color: #E9C5DF;
+                border: 1px solid #57405D;
             }
 
             QPushButton#resetButton:hover {
-                background-color: #dbe2ee;
+                background-color: #44304A;
+                border-color: #E9C5DF;
+            }
+
+            QPushButton#refreshTasksButton {
+                background-color: #30263B;
+                color: #D6C8F4;
+                border: 1px solid #493957;
+            }
+
+            QProgressBar {
+                background-color: #30263B;
+                border: none;
+                border-radius: 4px;
+                height: 9px;
+            }
+
+            QProgressBar::chunk {
+                background-color: #A58AF5;
+                border-radius: 4px;
             }
         """)
 
+        # Main layout
         main_layout = QVBoxLayout(self)
-        main_layout.setContentsMargins(30, 20, 30, 20)
-        main_layout.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        main_layout.setContentsMargins(10, 8, 10, 8)
+        main_layout.setSpacing(0)
 
-        # Main card
+        # Timer card
         card = QFrame()
         card.setObjectName("timerCard")
+        card.setMaximumWidth(720)
+        card.setSizePolicy(
+            QSizePolicy.Policy.Expanding,
+            QSizePolicy.Policy.Preferred
+        )
 
-        card_layout = QVBoxLayout(card)
-        card_layout.setContentsMargins(45, 40, 45, 40)
-        card_layout.setSpacing(20)
+        self.card_layout = QVBoxLayout(card)
+        self.card_layout.setContentsMargins(
+            26, 20, 26, 22
+        )
+        self.card_layout.setSpacing(10)
 
-        # Title
-        title = QLabel("TaskForge Timer")
+        # Header
+        eyebrow = QLabel("TASKFORGE / FOCUS WORKSPACE")
+        eyebrow.setObjectName("eyebrow")
+        eyebrow.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.card_layout.addWidget(eyebrow)
+
+        title = QLabel("Focus Timer")
         title.setObjectName("timerTitle")
         title.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        card_layout.addWidget(title)
 
-        # Task selection
-        task_title = QLabel("CURRENT TASK")
-        task_title.setStyleSheet("""
-            font-size: 12px;
-            font-weight: bold;
-            color: #7b8497;
-        """)
-        card_layout.addWidget(task_title)
+        self.card_layout.addWidget(title)
 
-        task_layout = QHBoxLayout()
+        subtitle = QLabel(
+            "Stay focused. Make every session count."
+        )
+        subtitle.setObjectName("timerSubtitle")
+        subtitle.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.card_layout.addWidget(subtitle)
+
+        # Task selection panel
+        task_panel = QFrame()
+        task_panel.setObjectName("taskPanel")
+
+        self.task_panel_layout = QVBoxLayout(task_panel)
+        self.task_panel_layout.setContentsMargins(
+            13, 10, 13, 10
+        )
+        self.task_panel_layout.setSpacing(7)
+
+        task_heading = QLabel("CURRENT TASK")
+        task_heading.setObjectName("taskHeading")
+
+        self.task_panel_layout.addWidget(task_heading)
+
+        task_row = QHBoxLayout()
+        task_row.setSpacing(8)
 
         self.task_selector = QComboBox()
-        self.task_selector.setMinimumWidth(260)
+        self.task_selector.setMinimumWidth(0)
+        self.task_selector.setSizePolicy(
+            QSizePolicy.Policy.Expanding,
+            QSizePolicy.Policy.Fixed
+        )
+
         self.task_selector.currentIndexChanged.connect(
             self.on_task_changed
         )
 
         self.refresh_tasks_button = QPushButton("Refresh")
-        self.refresh_tasks_button.setObjectName("resetButton")
+        self.refresh_tasks_button.setObjectName(
+            "refreshTasksButton"
+        )
+
         self.refresh_tasks_button.clicked.connect(
-            lambda: self.refresh_tasks()
+            self.refresh_tasks
         )
 
-        task_layout.addWidget(self.task_selector)
-        task_layout.addWidget(self.refresh_tasks_button)
+        task_row.addWidget(self.task_selector, 1)
+        task_row.addWidget(self.refresh_tasks_button)
 
-        card_layout.addLayout(task_layout)
+        self.task_panel_layout.addLayout(task_row)
 
-        # Selected task information
-        self.task_info = QLabel("No task selected")
-        self.task_info.setAlignment(
-            Qt.AlignmentFlag.AlignCenter
+        self.task_info = QLabel(
+            "Select a task before starting."
         )
-        self.task_info.setStyleSheet(
-            "color: #7b8497; font-size: 12px;"
-        )
+        self.task_info.setObjectName("taskInfo")
+        self.task_info.setWordWrap(True)
 
-        card_layout.addWidget(self.task_info)
+        self.task_panel_layout.addWidget(self.task_info)
 
-        # Mode
+        self.card_layout.addWidget(task_panel)
+
+        # Timer mode
         self.mode_label = QLabel()
         self.mode_label.setObjectName("modeLabel")
-        self.mode_label.setAlignment(
-            Qt.AlignmentFlag.AlignCenter
-        )
+        self.mode_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        card_layout.addWidget(self.mode_label)
+        self.card_layout.addWidget(
+            self.mode_label,
+            alignment=Qt.AlignmentFlag.AlignCenter
+        )
 
         # Digital timer
-        self.timer_display = QLabel()
+        self.time_hint = QLabel("TIME REMAINING")
+        self.time_hint.setObjectName("timeHint")
+        self.time_hint.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.card_layout.addWidget(self.time_hint)
+
+        self.timer_display = QLabel("25:00")
         self.timer_display.setObjectName("timerDisplay")
-        self.timer_display.setAlignment(
-            Qt.AlignmentFlag.AlignCenter
-        )
+        self.timer_display.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        card_layout.addWidget(self.timer_display)
+        self.card_layout.addWidget(self.timer_display)
 
-        # Progress
+        # Progress indicator
         self.progress_bar = QProgressBar()
         self.progress_bar.setTextVisible(False)
+        self.progress_bar.setRange(0, self.WORK_SECONDS)
+        self.progress_bar.setValue(0)
 
-        card_layout.addWidget(self.progress_bar)
+        self.card_layout.addWidget(self.progress_bar)
 
         # Completed sessions
         self.session_label = QLabel()
         self.session_label.setObjectName("sessionLabel")
-        self.session_label.setAlignment(
-            Qt.AlignmentFlag.AlignCenter
-        )
+        self.session_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        card_layout.addWidget(self.session_label)
+        self.card_layout.addWidget(self.session_label)
 
-        # Message
+        # Status message
         self.message_label = QLabel(
             "Select a task and start focusing."
         )
         self.message_label.setObjectName("messageLabel")
-        self.message_label.setAlignment(
-            Qt.AlignmentFlag.AlignCenter
-        )
+        self.message_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.message_label.setWordWrap(True)
 
-        card_layout.addWidget(self.message_label)
+        self.card_layout.addWidget(self.message_label)
 
-        # Buttons
+        # Control buttons
         buttons_layout = QHBoxLayout()
-        buttons_layout.setSpacing(12)
+        buttons_layout.setSpacing(10)
 
-        self.start_button = QPushButton("Start")
+        self.start_button = QPushButton("Start Focus")
         self.start_button.setObjectName("startButton")
+        self.start_button.setMinimumWidth(130)
+
         self.start_button.clicked.connect(
             self.toggle_timer
         )
 
         self.reset_button = QPushButton("Reset")
         self.reset_button.setObjectName("resetButton")
+        self.reset_button.setMinimumWidth(100)
+
         self.reset_button.clicked.connect(
             self.reset_timer
         )
@@ -266,12 +411,74 @@ class PomodoroWidget(QWidget):
         buttons_layout.addWidget(self.start_button)
         buttons_layout.addWidget(self.reset_button)
 
-        card_layout.addLayout(buttons_layout)
+        self.card_layout.addLayout(buttons_layout)
 
-        main_layout.addWidget(
-            card,
-            alignment=Qt.AlignmentFlag.AlignCenter
+        # Center the card horizontally.
+        # It grows with the window but never exceeds 720 px.
+        card_row = QHBoxLayout()
+        card_row.setContentsMargins(0, 0, 0, 0)
+        card_row.addStretch(1)
+        card_row.addWidget(card, 4)
+        card_row.addStretch(1)
+
+        main_layout.addStretch(1)
+        main_layout.addLayout(card_row)
+        main_layout.addStretch(1)
+
+        self._apply_responsive_layout()
+
+    # =====================================
+    # RESPONSIVE LAYOUT
+    # =====================================
+
+    def _apply_responsive_layout(self):
+
+        if not hasattr(self, "timer_display"):
+            return
+
+        compact = (
+            self.width() < 850
+            or self.height() < 540
         )
+
+        if compact:
+            self.card_layout.setContentsMargins(
+                18, 12, 18, 14
+            )
+            self.card_layout.setSpacing(7)
+
+            self.task_panel_layout.setContentsMargins(
+                11, 8, 11, 8
+            )
+            self.task_panel_layout.setSpacing(5)
+
+            font_size = 43
+
+        else:
+            self.card_layout.setContentsMargins(
+                26, 20, 26, 22
+            )
+            self.card_layout.setSpacing(10)
+
+            self.task_panel_layout.setContentsMargins(
+                13, 10, 13, 10
+            )
+            self.task_panel_layout.setSpacing(7)
+
+            font_size = 56
+
+        self.timer_display.setFont(
+            QFont(
+                "Segoe UI",
+                font_size,
+                QFont.Weight.Bold
+            )
+        )
+
+    def resizeEvent(self, event):
+
+        super().resizeEvent(event)
+        self._apply_responsive_layout()
 
     # =====================================
     # TASK SELECTION
@@ -279,7 +486,6 @@ class PomodoroWidget(QWidget):
 
     def refresh_tasks(self):
 
-        # Preserve current selection
         current_id = self.task_selector.currentData()
 
         self.task_selector.blockSignals(True)
@@ -299,7 +505,6 @@ class PomodoroWidget(QWidget):
                 title = task[1]
                 status = task[7]
 
-                # Do not show completed tasks
                 if status == "completed":
                     continue
 
@@ -308,9 +513,7 @@ class PomodoroWidget(QWidget):
                     task_id
                 )
 
-            index = self.task_selector.findData(
-                current_id
-            )
+            index = self.task_selector.findData(current_id)
 
             if index >= 0:
                 self.task_selector.setCurrentIndex(index)
@@ -377,7 +580,6 @@ class PomodoroWidget(QWidget):
 
     def start_timer(self):
 
-        # Work session requires a selected task
         if self.mode == "work":
 
             if self.selected_task_id is None:
@@ -386,11 +588,12 @@ class PomodoroWidget(QWidget):
                 )
                 return
 
-            # Create session data only on the first start.
-            # Resume must not reset the start time or elapsed time.
             if self.session_started_at is None:
+
                 self.session_task_id = self.selected_task_id
-                self.session_task_title = self.task_selector.currentText()
+                self.session_task_title = (
+                    self.task_selector.currentText()
+                )
 
                 self.session_started_at = (
                     datetime.now()
@@ -431,7 +634,6 @@ class PomodoroWidget(QWidget):
         self.timer.stop()
         self.is_running = False
 
-        # Reset an unfinished work session
         if self.mode == "work":
             self.clear_active_session()
 
@@ -440,7 +642,7 @@ class PomodoroWidget(QWidget):
         self.task_selector.setEnabled(True)
         self.refresh_tasks_button.setEnabled(True)
 
-        self.start_button.setText("Start")
+        self.start_button.setText("Start Focus")
 
         self.message_label.setText(
             "Timer reset."
@@ -452,11 +654,14 @@ class PomodoroWidget(QWidget):
 
         self.remaining_seconds -= 1
 
-        # Count only actual focus time
-        if self.mode == "work" and self.session_started_at is not None:
+        if (
+            self.mode == "work"
+            and self.session_started_at is not None
+        ):
             self.session_elapsed_seconds += 1
 
         if self.remaining_seconds <= 0:
+
             self.remaining_seconds = 0
 
             self.timer.stop()
@@ -473,9 +678,9 @@ class PomodoroWidget(QWidget):
     def save_completed_session(self):
 
         if (
-                self.session_task_id is None
-                or self.session_started_at is None
-                or self.session_elapsed_seconds <= 0
+            self.session_task_id is None
+            or self.session_started_at is None
+            or self.session_elapsed_seconds <= 0
         ):
             self.clear_active_session()
             return False
@@ -501,6 +706,7 @@ class PomodoroWidget(QWidget):
             return True
 
         except Exception as error:
+
             QMessageBox.warning(
                 self,
                 "Session History Error",
@@ -519,21 +725,20 @@ class PomodoroWidget(QWidget):
 
     def finish_phase(self):
 
-        self.start_button.setText("Start")
+        self.start_button.setText("Start Focus")
 
         self.task_selector.setEnabled(True)
         self.refresh_tasks_button.setEnabled(True)
 
         if self.mode == "work":
 
-            # Save completed work session
             session_saved = self.save_completed_session()
 
             self.completed_work_sessions += 1
 
             if (
-                    self.completed_work_sessions
-                    % self.SESSIONS_BEFORE_LONG_BREAK == 0
+                self.completed_work_sessions
+                % self.SESSIONS_BEFORE_LONG_BREAK == 0
             ):
 
                 self.mode = "long_break"
@@ -570,8 +775,8 @@ class PomodoroWidget(QWidget):
 
         self.remaining_seconds = self.get_current_duration()
 
-        # Select a task again before the next work session
         if self.mode == "work":
+
             self.selected_task_id = None
             self.task_selector.setCurrentIndex(0)
 
@@ -599,15 +804,18 @@ class PomodoroWidget(QWidget):
         else:
             self.mode_label.setText("LONG BREAK")
 
-        self.session_label.setText(
-            f"Completed focus sessions: "
-            f"{self.completed_work_sessions}"
-        )
+        total_duration = self.get_current_duration()
 
-        self.progress_bar.setMaximum(
-            self.get_current_duration()
+        self.progress_bar.setRange(
+            0,
+            total_duration
         )
 
         self.progress_bar.setValue(
-            self.remaining_seconds
+            total_duration - self.remaining_seconds
+        )
+
+        self.session_label.setText(
+            f"Completed focus sessions: "
+            f"{self.completed_work_sessions}"
         )

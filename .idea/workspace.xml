@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0c0f23d-7de3-4903-b716-6db1ba9618d4" name="Changes" comment="" />
+    <list default="true" id="b0c0f23d-7de3-4903-b716-6db1ba9618d4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/TaskForge/ui/dialog_theme.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TaskForge/ui/text_interaction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskForge/ui/history_widget.py" beforeDir="false" afterPath="$PROJECT_DIR$/TaskForge/ui/history_widget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskForge/ui/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/TaskForge/ui/main_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskForge/ui/pomodoro_widget.py" beforeDir="false" afterPath="$PROJECT_DIR$/TaskForge/ui/pomodoro_widget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskForge/ui/statistics_widget.py" beforeDir="false" afterPath="$PROJECT_DIR$/TaskForge/ui/statistics_widget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Taskforge/ui/category_dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/Taskforge/ui/category_dialog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

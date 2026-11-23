@@ -14,13 +14,13 @@ from PyQt6.QtWidgets import (
     QVBoxLayout,
     QWidget,
 )
-
+from ui.dialog_theme import DIALOG_STYLESHEET
 
 class CategoryDialog(QDialog):
     def __init__(self, parent=None, category=None):
         super().__init__(parent)
         self.category = category
-        self._color = category[2] if category else "#3498db"
+        self._color = category[2] if category else "#A58AF5"
         self.setWindowTitle("Edit Category" if category else "Create Category")
         self.setMinimumWidth(390)
 
@@ -56,17 +56,37 @@ class CategoryDialog(QDialog):
 
         if category:
             self.name_input.setText(category[1])
-        self.update_color_preview()
+        self.setStyleSheet(DIALOG_STYLESHEET)
 
     def choose_color(self):
-        selected = QColorDialog.getColor(QColor(self._color), self, "Choose category color")
-        if selected.isValid():
-            self._color = selected.name()
-            self.update_color_preview()
+        dialog = QColorDialog(
+            QColor(self._color),
+            self
+        )
+
+        dialog.setWindowTitle("Choose Category Color")
+
+        dialog.setOption(
+            QColorDialog.ColorDialogOption.DontUseNativeDialog,
+            True
+        )
+
+        dialog.setStyleSheet(DIALOG_STYLESHEET)
+
+        if dialog.exec() == QDialog.DialogCode.Accepted:
+            selected = dialog.selectedColor()
+
+            if selected.isValid():
+                self._color = selected.name()
+                self.update_color_preview()
 
     def update_color_preview(self):
         self.color_preview.setStyleSheet(
-            f"background-color: {self._color}; border: 1px solid #9aa3b2; border-radius: 5px;"
+            f"""
+            background-color: {self._color};
+            border: 1px solid #57466B;
+            border-radius: 7px;
+            """
         )
 
     def validate_and_accept(self):

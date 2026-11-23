@@ -18,7 +18,7 @@ from PyQt6.QtWidgets import (
 )
 
 from database.category_repository import get_all_categories
-
+from ui.dialog_theme import DIALOG_STYLESHEET
 
 class TaskDialog(QDialog):
     def __init__(self, parent=None, task=None):
@@ -88,12 +88,8 @@ class TaskDialog(QDialog):
         buttons.rejected.connect(self.reject)
         main_layout.addWidget(buttons)
 
-        self.setStyleSheet(
-            "QDialog { background: #f7f8fb; }"
-            "QLineEdit, QTextEdit, QSpinBox, QComboBox, QDateEdit {"
-            " padding: 7px; border: 1px solid #d7dce5; border-radius: 5px;"
-            " background: white; }"
-        )
+        self.setStyleSheet(DIALOG_STYLESHEET)
+
 
     @staticmethod
     def _make_score_box() -> QSpinBox:
