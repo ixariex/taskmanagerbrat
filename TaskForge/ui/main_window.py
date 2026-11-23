@@ -40,6 +40,8 @@ from ui.category_dialog import CategoryDialog
 from ui.task_dialog import TaskDialog
 
 from ui.pomodoro_widget import PomodoroWidget
+from ui.history_widget import HistoryWidget
+from ui.statistics_widget import StatisticsWidget
 
 
 STYLESHEET = """
@@ -115,7 +117,9 @@ class MainWindow(QMainWindow):
             "My Tasks",
             "Categories",
             "Completed",
-            "Timer"
+            "Timer",
+            "History",
+            "Statistics"
         ]
 
         for index, page_name in enumerate(pages):
@@ -173,12 +177,16 @@ class MainWindow(QMainWindow):
         self.categories_page = self.build_categories_page()
         self.completed_page = self.build_completed_page()
         self.pomodoro_page = PomodoroWidget()
+        self.history_page = HistoryWidget()
+        self.statistics_page = StatisticsWidget()
         for page in (
                 self.dashboard_page,
                 self.tasks_page,
                 self.categories_page,
                 self.completed_page,
-                self.pomodoro_page
+                self.pomodoro_page,
+                self.history_page,
+                self.statistics_page
         ):
             self.stack.addWidget(page)
         layout.addWidget(self.stack)
@@ -311,7 +319,9 @@ class MainWindow(QMainWindow):
             ("My Tasks", "Search, filter and manage your tasks"),
             ("Categories", "Organize tasks with color-coded categories"),
             ("Completed", "Your finished tasks"),
-            ("Pomodoro", "Focus on what matters")
+            ("Pomodoro", "Focus on what matters"),
+            ("History", "Your completed focus sessions"),
+            ("Statistics", "Your productivity insights")
         ]
 
         if not 0 <= index < len(pages):
@@ -368,6 +378,8 @@ class MainWindow(QMainWindow):
                 item = QListWidgetItem(self.format_task(task))
                 item.setData(Qt.ItemDataRole.UserRole, task[0])
                 self.completed_list.addItem(item)
+                self.history_page.refresh_data()
+                self.statistics_page.refresh_data()
 
         except Exception as error:
             QMessageBox.critical(self, "Loading Error", f"Could not load data:\n{error}")

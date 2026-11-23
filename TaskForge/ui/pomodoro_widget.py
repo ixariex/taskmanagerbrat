@@ -20,9 +20,9 @@ from database.pomodoro_repository import add_completed_session
 
 class PomodoroWidget(QWidget):
 
-    WORK_SECONDS = 10
-    SHORT_BREAK_SECONDS = 5
-    LONG_BREAK_SECONDS = 15
+    WORK_SECONDS = 25 * 60
+    SHORT_BREAK_SECONDS = 5 * 60
+    LONG_BREAK_SECONDS = 15 * 60
 
     SESSIONS_BEFORE_LONG_BREAK = 4
 
