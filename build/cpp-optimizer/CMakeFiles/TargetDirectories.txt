@@ -1,3 +1,0 @@
-F:/githubproj/taskmanagerbrat/build/cpp-optimizer/CMakeFiles/task_optimizer.dir
-F:/githubproj/taskmanagerbrat/build/cpp-optimizer/CMakeFiles/ALL_BUILD.dir
-F:/githubproj/taskmanagerbrat/build/cpp-optimizer/CMakeFiles/ZERO_CHECK.dir

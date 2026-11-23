@@ -1,7 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0c0f23d-7de3-4903-b716-6db1ba9618d4" name="Changes" comment="" />
+    <list default="true" id="b0c0f23d-7de3-4903-b716-6db1ba9618d4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/TaskForge/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/TaskForge/Analysis-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/TaskForge/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/TaskForge/EXE-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/TaskForge/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/TaskForge/PYZ-00.pyz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/TaskForge/PYZ-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/TaskForge/PYZ-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/TaskForge/TaskForge.exe" beforeDir="false" afterPath="$PROJECT_DIR$/build/TaskForge/TaskForge.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/TaskForge/TaskForge.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/TaskForge/TaskForge.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/TaskForge/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/TaskForge/base_library.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/TaskForge/warn-TaskForge.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/TaskForge/warn-TaskForge.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/TaskForge/xref-TaskForge.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/TaskForge/xref-TaskForge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/TaskForge.exe" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/TaskForge.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtCore/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtCore/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtMultimedia/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtMultimedia/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtNetwork/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtNetwork/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtPositioning/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtPositioning/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQml/DesignSupport/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQml/DesignSupport/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQml/Models/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQml/Models/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQml/StateMachine/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQml/StateMachine/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQml/WorkerScript/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQml/WorkerScript/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQml/XmlListModel/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQml/XmlListModel/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQml/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQml/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Basic/impl/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Basic/impl/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Basic/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Basic/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/FluentWinUI3/impl/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/FluentWinUI3/impl/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/FluentWinUI3/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/FluentWinUI3/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Fusion/impl/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Fusion/impl/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Fusion/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Fusion/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Imagine/impl/QuickControls2ImagineStyleImpl.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Imagine/impl/QuickControls2ImagineStyleImpl.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Imagine/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Imagine/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Material/impl/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Material/impl/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Material/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Material/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Native/QuickControls2Native.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Native/QuickControls2Native.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Universal/impl/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Universal/impl/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Universal/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Universal/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Windows/QuickControls2Windows.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Windows/QuickControls2Windows.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Windows/impl/QuickControls2WindowsStyleImpl.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/Windows/impl/QuickControls2WindowsStyleImpl.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/impl/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/impl/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Controls/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Dialogs/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Dialogs/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Dialogs/quickimpl/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Dialogs/quickimpl/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Effects/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Effects/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Layouts/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Layouts/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/LocalStorage/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/LocalStorage/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/NativeStyle/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/NativeStyle/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Particles/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Particles/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Pdf/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Pdf/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Scene2D/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Scene2D/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Scene3D/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Scene3D/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Shapes/DesignHelpers/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Shapes/DesignHelpers/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Shapes/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Shapes/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Templates/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Templates/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Timeline/BlendTrees/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Timeline/BlendTrees/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Timeline/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Timeline/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/VectorImage/Helpers/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/VectorImage/Helpers/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/VectorImage/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/VectorImage/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Window/quickwindow.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/Window/quickwindow.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/tooling/quicktooling.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick/tooling/quicktooling.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/AssetUtils/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/AssetUtils/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/Effects/Quick3DEffects.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/Effects/Quick3DEffects.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/Helpers/impl/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/Helpers/impl/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/Helpers/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/Helpers/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/MaterialEditor/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/MaterialEditor/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/ParticleEffects/Quick3DParticleEffects.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/ParticleEffects/Quick3DParticleEffects.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/Particles3D/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/Particles3D/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/Physics/Helpers/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/Physics/Helpers/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/Physics/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/Physics/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/Quick3D.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/Quick3D.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/SpatialAudio/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/SpatialAudio/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/Xr/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/Xr/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/lightmapviewer/lightmapviewer.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtQuick3D/lightmapviewer/lightmapviewer.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtRemoteObjects/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtRemoteObjects/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtSensors/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtSensors/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtTest/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtTest/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtTextToSpeech/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtTextToSpeech/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtWebChannel/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtWebChannel/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtWebSockets/plugins.qmltypes" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/Qt6/qml/QtWebSockets/plugins.qmltypes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/sip.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/PyQt6/sip.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/base_library.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/database/data/taskforge.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/pyqt6-6.12.1.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/pyqt6-6.12.1.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/pyqt6-6.12.1.dist-info/licenses/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/pyqt6-6.12.1.dist-info/licenses/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/pyqt6_qt6-6.12.0.dist-info/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/pyqt6_qt6-6.12.0.dist-info/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/pyqt6_qt6-6.12.0.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/pyqt6_qt6-6.12.0.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/pyqt6_sip-13.13.1.dist-info/RECORD" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/pyqt6_sip-13.13.1.dist-info/RECORD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/pyqt6_sip-13.13.1.dist-info/WHEEL" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/pyqt6_sip-13.13.1.dist-info/WHEEL" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/pyqt6_sip-13.13.1.dist-info/licenses/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/pyqt6_sip-13.13.1.dist-info/licenses/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/TaskForge/_internal/pyqt6_sip-13.13.1.dist-info/top_level.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dist/TaskForge/_internal/pyqt6_sip-13.13.1.dist-info/top_level.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +134,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "connector",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "F:/githubproj/taskmanagerbrat/cpp",
     "nodejs_package_manager_path": "npm",
@@ -64,6 +153,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
         <env name="VIRTUAL_ENV" value="F:\githubproj\taskmanagerbrat\.venv" />
       </envs>
       <option name="SDK_HOME" value="" />
