@@ -1,8 +1,21 @@
-.venv/
+# Python cache
 __pycache__/
 *.py[cod]
-.idea/
-.pytest_cache/
 
-# Keep the database local; do not commit user data.
-database/data/*.db
+# Virtual environments
+.venv/
+venv/
+
+# CMake build artifacts
+/build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# Compiled Python extensions
+*.pyd
+
+# Visual Studio
+.vs/
+*.user
+*.suo
