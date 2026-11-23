@@ -19,6 +19,7 @@ from PyQt6.QtWidgets import (
     QVBoxLayout,
     QWidget,
     QMainWindow,
+    QProgressBar,
 )
 
 from core.category_manager import (
@@ -411,51 +412,469 @@ class MainWindow(QMainWindow):
         return card, value_label
 
     # ---------- Pages ----------
+
     def build_dashboard(self):
         page = QWidget()
+        page.setObjectName("dashboardPage")
+
+        page.setStyleSheet("""
+            QWidget#dashboardPage {
+                background-color: #100D16;
+                color: #F2EAF9;
+            }
+
+            QWidget#dashboardPage QLabel {
+                color: #F2EAF9;
+                background: transparent;
+            }
+
+            QWidget#dashboardPage QLabel#statTitle {
+                color: #B8A9C9;
+                font-size: 13px;
+            }
+
+            QWidget#dashboardPage QLabel#statValue {
+                color: #D6C8F4;
+                font-size: 27px;
+                font-weight: bold;
+            }
+
+            QWidget#dashboardPage QLabel#sectionTitle {
+                color: #E9C5DF;
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            QWidget#dashboardPage QListWidget {
+                background-color: #191421;
+                color: #F2EAF9;
+                border: 1px solid #352A42;
+                border-radius: 12px;
+            }
+
+            QWidget#dashboardPage QListWidget::item {
+                color: #F2EAF9;
+            }
+
+            QWidget#dashboardPage QListWidget::item:selected {
+                background-color: #392B4D;
+                color: #E5D6FF;
+            }
+        """)
+
         layout = QVBoxLayout(page)
-        cards = QHBoxLayout()
-        cards.setSpacing(15)
-        card, self.total_value = self.make_stat_card("Total Tasks")
-        cards.addWidget(card)
-        card, self.progress_value = self.make_stat_card("In Progress")
-        cards.addWidget(card)
-        card, self.completed_value = self.make_stat_card("Completed")
-        cards.addWidget(card)
-        card, self.overdue_value = self.make_stat_card("Overdue")
-        cards.addWidget(card)
-        layout.addLayout(cards)
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.setSpacing(18)
+
+        # =====================================
+        # HEADER
+        # =====================================
+
+        header_layout = QVBoxLayout()
+        header_layout.setSpacing(5)
+
+        eyebrow = QLabel("TASKFORGE / YOUR WORKSPACE")
+        eyebrow.setStyleSheet("""
+            color: #A58AF5;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            background: transparent;
+        """)
+
+        welcome_title = QLabel("Welcome back.")
+        welcome_title.setStyleSheet("""
+            color: #F2EAF9;
+            font-size: 27px;
+            font-weight: bold;
+            background: transparent;
+        """)
+
+        welcome_subtitle = QLabel(
+            "Here's your productivity overview."
+        )
+        welcome_subtitle.setStyleSheet("""
+            color: #A69AAF;
+            font-size: 13px;
+            background: transparent;
+        """)
+
+        header_layout.addWidget(eyebrow)
+        header_layout.addWidget(welcome_title)
+        header_layout.addWidget(welcome_subtitle)
+
+        layout.addLayout(header_layout)
+
+        # =====================================
+        # STATISTICS CARDS
+        # =====================================
+
+        cards_layout = QHBoxLayout()
+        cards_layout.setSpacing(13)
+
+        card, self.total_value = self.make_stat_card(
+            "Total Tasks"
+        )
+        cards_layout.addWidget(card)
+
+        card, self.progress_value = self.make_stat_card(
+            "In Progress"
+        )
+        cards_layout.addWidget(card)
+
+        card, self.completed_value = self.make_stat_card(
+            "Completed"
+        )
+        cards_layout.addWidget(card)
+
+        card, self.overdue_value = self.make_stat_card(
+            "Overdue"
+        )
+        cards_layout.addWidget(card)
+
+        layout.addLayout(cards_layout)
+
+        # =====================================
+        # BOTTOM SECTION
+        # =====================================
+
+        bottom_layout = QHBoxLayout()
+        bottom_layout.setSpacing(15)
+
+        # Productivity overview card
+        overview_card = QFrame()
+        overview_card.setObjectName("statCard")
+        overview_card.setMinimumWidth(190)
+
+        overview_layout = QVBoxLayout(overview_card)
+        overview_layout.setContentsMargins(20, 18, 20, 18)
+        overview_layout.setSpacing(13)
+
+        overview_title = QLabel("Productivity Overview")
+        overview_title.setObjectName("sectionTitle")
+
+        overview_layout.addWidget(overview_title)
+
+        rate_header = QHBoxLayout()
+
+        rate_label = QLabel("Completion rate")
+        rate_label.setStyleSheet(
+            "color: #A69AAF; background: transparent;"
+        )
+
+        self.completion_rate_value = QLabel("0%")
+        self.completion_rate_value.setStyleSheet("""
+            color: #D6C8F4;
+            font-size: 22px;
+            font-weight: bold;
+            background: transparent;
+        """)
+
+        rate_header.addWidget(rate_label)
+        rate_header.addStretch()
+        rate_header.addWidget(self.completion_rate_value)
+
+        overview_layout.addLayout(rate_header)
+
+        self.completion_progress = QProgressBar()
+        self.completion_progress.setRange(0, 100)
+        self.completion_progress.setValue(0)
+        self.completion_progress.setTextVisible(False)
+        self.completion_progress.setFixedHeight(9)
+
+        self.completion_progress.setStyleSheet("""
+            QProgressBar {
+                background-color: #382C48;
+                border: none;
+                border-radius: 4px;
+            }
+
+            QProgressBar::chunk {
+                background-color: #A58AF5;
+                border-radius: 4px;
+            }
+        """)
+
+        overview_layout.addWidget(self.completion_progress)
+
+        self.completion_description = QLabel(
+            "Complete your first task to get started."
+        )
+        self.completion_description.setWordWrap(True)
+        self.completion_description.setStyleSheet("""
+            color: #A69AAF;
+            font-size: 11px;
+            background: transparent;
+        """)
+
+        overview_layout.addWidget(self.completion_description)
+        overview_layout.addStretch()
+
+        bottom_layout.addWidget(overview_card, 1)
+
+        # =====================================
+        # RECENT TASKS CARD
+        # =====================================
+
+        recent_card = QFrame()
+        recent_card.setObjectName("statCard")
+
+        recent_layout = QVBoxLayout(recent_card)
+        recent_layout.setContentsMargins(20, 18, 20, 18)
+        recent_layout.setSpacing(12)
+
+        recent_header = QHBoxLayout()
 
         recent_title = QLabel("Recent Tasks")
-        recent_title.setStyleSheet("font-size: 17px; font-weight: bold;")
-        layout.addWidget(recent_title)
+        recent_title.setObjectName("sectionTitle")
+
+        recent_subtitle = QLabel("Your latest activity")
+        recent_subtitle.setStyleSheet("""
+            color: #A69AAF;
+            font-size: 11px;
+            background: transparent;
+        """)
+
+        recent_header.addWidget(recent_title)
+        recent_header.addStretch()
+        recent_header.addWidget(recent_subtitle)
+
+        recent_layout.addLayout(recent_header)
+
         self.recent_list = QListWidget()
-        layout.addWidget(self.recent_list)
+        self.recent_list.setMinimumHeight(170)
+        self.recent_list.setObjectName("recentList")
+
+        recent_layout.addWidget(self.recent_list)
+
+        bottom_layout.addWidget(recent_card, 2)
+
+        layout.addLayout(bottom_layout)
+
+        layout.addStretch()
+
         return page
 
     def build_tasks_page(self):
         page = QWidget()
-        layout = QVBoxLayout(page)
-        filters = QHBoxLayout()
+        page.setObjectName("tasksPage")
 
+        page.setStyleSheet("""
+            QWidget#tasksPage {
+                background: transparent;
+                color: #F2EAF9;
+            }
+
+            QLabel#tasksEyebrow {
+                color: #A58AF5;
+                font-size: 10px;
+                font-weight: bold;
+                letter-spacing: 2px;
+            }
+
+            QLabel#tasksTitle {
+                color: #F2EAF9;
+                font-size: 27px;
+                font-weight: bold;
+            }
+
+            QLabel#tasksSubtitle {
+                color: #A69AAF;
+                font-size: 12px;
+            }
+
+            QLabel#taskCount {
+                color: #D6C8F4;
+                background: #30263B;
+                border: 1px solid #493957;
+                border-radius: 10px;
+                padding: 7px 13px;
+                font-weight: bold;
+            }
+
+            QLabel#sectionTitle {
+                color: #E9C5DF;
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            QFrame#tasksFilterPanel,
+            QFrame#taskListPanel {
+                background-color: #1B1624;
+                border: 1px solid #352A42;
+                border-radius: 13px;
+            }
+
+            QLineEdit,
+            QComboBox {
+                background-color: #15111C;
+                color: #F2EAF9;
+                border: 1px solid #40344F;
+                border-radius: 8px;
+                padding: 10px;
+                min-height: 21px;
+            }
+
+            QLineEdit:focus,
+            QComboBox:focus {
+                border: 1px solid #A58AF5;
+            }
+
+            QLineEdit::placeholder {
+                color: #867A94;
+            }
+
+            QComboBox QAbstractItemView {
+                background-color: #211A2D;
+                color: #F2EAF9;
+                border: 1px solid #493957;
+                selection-background-color: #48345F;
+                selection-color: white;
+            }
+
+            QListWidget {
+                background-color: #15111C;
+                color: #F2EAF9;
+                border: 1px solid #352A42;
+                border-radius: 10px;
+                padding: 8px;
+                outline: none;
+            }
+
+            QListWidget::item {
+                background-color: #1D1727;
+                color: #F2EAF9;
+                padding: 14px;
+                margin: 3px 1px;
+                border: 1px solid #30263B;
+                border-radius: 8px;
+            }
+
+            QListWidget::item:hover {
+                background-color: #292136;
+                border-color: #57446D;
+            }
+
+            QListWidget::item:selected {
+                background-color: #392B4D;
+                border-color: #A58AF5;
+                color: #FFFFFF;
+            }
+
+            QPushButton#primaryButton {
+                background-color: #A58AF5;
+                color: #160F20;
+                border: none;
+                border-radius: 8px;
+                padding: 11px 17px;
+                font-weight: bold;
+            }
+
+            QPushButton#primaryButton:hover {
+                background-color: #BBA8FA;
+            }
+
+            QPushButton#secondaryButton {
+                background-color: #30263B;
+                color: #D6C8F4;
+                border: 1px solid #493957;
+                border-radius: 8px;
+                padding: 11px 17px;
+            }
+
+            QPushButton#secondaryButton:hover {
+                background-color: #443653;
+            }
+
+            QPushButton#dangerButton {
+                background-color: #38202F;
+                color: #F2C5DF;
+                border: 1px solid #684052;
+                border-radius: 8px;
+                padding: 11px 17px;
+            }
+
+            QPushButton#dangerButton:hover {
+                background-color: #553047;
+            }
+        """)
+
+        layout = QVBoxLayout(page)
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.setSpacing(13)
+
+        # =====================================
+        # PAGE HEADER
+        # =====================================
+
+        header = QVBoxLayout()
+        header.setSpacing(4)
+
+        eyebrow = QLabel("TASKFORGE / WORKSPACE")
+        eyebrow.setObjectName("tasksEyebrow")
+
+        title = QLabel("My Tasks")
+        title.setObjectName("tasksTitle")
+
+        subtitle = QLabel(
+            "Manage your tasks and stay productive."
+        )
+        subtitle.setObjectName("tasksSubtitle")
+
+        header.addWidget(eyebrow)
+        header.addWidget(title)
+        header.addWidget(subtitle)
+
+        layout.addLayout(header)
+
+        # =====================================
+        # FILTER PANEL
+        # =====================================
+
+        filter_panel = QFrame()
+        filter_panel.setObjectName("tasksFilterPanel")
+
+        filter_layout = QVBoxLayout(filter_panel)
+        filter_layout.setContentsMargins(14, 13, 14, 13)
+        filter_layout.setSpacing(10)
+
+        # Search
         self.search_input = QLineEdit()
-        self.search_input.setPlaceholderText("Search tasks by title or description...")
-        self.search_input.textChanged.connect(self.refresh_task_list)
-        filters.addWidget(self.search_input, 2)
+        self.search_input.setPlaceholderText(
+            "Search tasks by title or description..."
+        )
+        self.search_input.setClearButtonEnabled(True)
+
+        self.search_input.textChanged.connect(
+            self.refresh_task_list
+        )
+
+        filter_layout.addWidget(self.search_input)
+
+        # Filter controls
+        filters = QHBoxLayout()
+        filters.setSpacing(9)
 
         self.status_filter = QComboBox()
         self.status_filter.addItem("All statuses", "all")
         self.status_filter.addItem("New", "new")
         self.status_filter.addItem("In Progress", "in_progress")
         self.status_filter.addItem("Completed", "completed")
-        self.status_filter.currentIndexChanged.connect(self.refresh_task_list)
-        filters.addWidget(self.status_filter)
+
+        self.status_filter.currentIndexChanged.connect(
+            self.refresh_task_list
+        )
 
         self.category_filter = QComboBox()
         self.category_filter.addItem("All categories", "all")
-        self.category_filter.addItem("No category", "uncategorized")
-        self.category_filter.currentIndexChanged.connect(self.refresh_task_list)
-        filters.addWidget(self.category_filter)
+        self.category_filter.addItem(
+            "No category",
+            "uncategorized"
+        )
+
+        self.category_filter.currentIndexChanged.connect(
+            self.refresh_task_list
+        )
 
         self.sort_filter = QComboBox()
         self.sort_filter.addItem("Newest first", "newest")
@@ -463,15 +882,52 @@ class MainWindow(QMainWindow):
         self.sort_filter.addItem("Deadline soonest", "deadline")
         self.sort_filter.addItem("Importance highest", "importance")
         self.sort_filter.addItem("Urgency highest", "urgency")
-        self.sort_filter.addItem("Smart priority", "priority")
-        self.sort_filter.currentIndexChanged.connect(self.refresh_task_list)
-        filters.addWidget(self.sort_filter)
-        layout.addLayout(filters)
+        self.sort_filter.addItem("C++ Priority", "priority")
 
+        self.sort_filter.currentIndexChanged.connect(
+            self.refresh_task_list
+        )
+
+        filters.addWidget(self.status_filter, 1)
+        filters.addWidget(self.category_filter, 1)
+        filters.addWidget(self.sort_filter, 1)
+
+        filter_layout.addLayout(filters)
+
+        layout.addWidget(filter_panel)
+
+        # =====================================
+        # TASK LIST PANEL
+        # =====================================
+
+        task_panel = QFrame()
+        task_panel.setObjectName("taskListPanel")
+
+        task_layout = QVBoxLayout(task_panel)
+        task_layout.setContentsMargins(14, 13, 14, 14)
+        task_layout.setSpacing(11)
+
+        # List header
+        list_header = QHBoxLayout()
+
+        section_title = QLabel("Your Tasks")
+        section_title.setObjectName("sectionTitle")
+
+        self.task_count_label = QLabel("0 tasks")
+        self.task_count_label.setObjectName("taskCount")
+
+        list_header.addWidget(section_title)
+        list_header.addStretch()
+        list_header.addWidget(self.task_count_label)
+
+        task_layout.addLayout(list_header)
+
+        # Actions
         actions = QHBoxLayout()
+        actions.setSpacing(8)
 
         edit_button = QPushButton("Edit Selected")
-        edit_button.setObjectName("primaryButton")
+        edit_button.setObjectName("secondaryButton")
         edit_button.clicked.connect(
             lambda checked=False: self.edit_selected_task()
         )
@@ -493,43 +949,364 @@ class MainWindow(QMainWindow):
         actions.addStretch()
         actions.addWidget(optimize_button)
 
-        layout.addLayout(actions)
+        task_layout.addLayout(actions)
 
+        # Actual task list
         self.tasks_list = QListWidget()
-        self.tasks_list.itemDoubleClicked.connect(lambda item: self.edit_selected_task(item))
-        layout.addWidget(self.tasks_list)
+        self.tasks_list.setObjectName("tasksList")
+        self.tasks_list.setSpacing(4)
+        self.tasks_list.setWordWrap(True)
+
+        self.tasks_list.itemDoubleClicked.connect(
+            lambda item: self.edit_selected_task(item)
+        )
+
+        task_layout.addWidget(self.tasks_list, 1)
+
+        layout.addWidget(task_panel, 1)
+
         return page
 
     def build_categories_page(self):
         page = QWidget()
+        page.setObjectName("categoriesPage")
+
+        page.setStyleSheet("""
+            QWidget#categoriesPage {
+                background: transparent;
+                color: #F2EAF9;
+            }
+
+            QLabel#categoriesEyebrow {
+                color: #A58AF5;
+                font-size: 10px;
+                font-weight: bold;
+                letter-spacing: 2px;
+            }
+
+            QLabel#categoriesTitle {
+                color: #F2EAF9;
+                font-size: 27px;
+                font-weight: bold;
+            }
+
+            QLabel#categoriesSubtitle {
+                color: #A69AAF;
+                font-size: 12px;
+            }
+
+            QFrame#categoriesPanel {
+                background-color: #1B1624;
+                border: 1px solid #352A42;
+                border-radius: 14px;
+            }
+
+            QLabel#categoriesSectionTitle {
+                color: #E9C5DF;
+                font-size: 17px;
+                font-weight: bold;
+            }
+
+            QLabel#categoryCount {
+                color: #D6C8F4;
+                background-color: #30263B;
+                border: 1px solid #493957;
+                border-radius: 9px;
+                padding: 7px 12px;
+                font-weight: bold;
+            }
+
+            QListWidget {
+                background-color: #15111C;
+                color: #F2EAF9;
+                border: 1px solid #352A42;
+                border-radius: 10px;
+                padding: 8px;
+                outline: none;
+            }
+
+            QListWidget::item {
+                background-color: #1D1727;
+                padding: 13px;
+                margin: 3px;
+                border: 1px solid #30263B;
+                border-radius: 8px;
+            }
+
+            QListWidget::item:hover {
+                background-color: #292136;
+                border-color: #57446D;
+            }
+
+            QListWidget::item:selected {
+                background-color: #392B4D;
+                border-color: #A58AF5;
+            }
+
+            QPushButton#primaryButton {
+                background-color: #A58AF5;
+                color: #160F20;
+                border: none;
+                border-radius: 8px;
+                padding: 11px 17px;
+                font-weight: bold;
+            }
+
+            QPushButton#primaryButton:hover {
+                background-color: #BBA8FA;
+            }
+
+            QPushButton#secondaryButton {
+                background-color: #30263B;
+                color: #D6C8F4;
+                border: 1px solid #493957;
+                border-radius: 8px;
+                padding: 11px 17px;
+            }
+
+            QPushButton#secondaryButton:hover {
+                background-color: #443653;
+            }
+
+            QPushButton#dangerButton {
+                background-color: #38202F;
+                color: #F2C5DF;
+                border: 1px solid #684052;
+                border-radius: 8px;
+                padding: 11px 17px;
+            }
+
+            QPushButton#dangerButton:hover {
+                background-color: #553047;
+            }
+        """)
+
         layout = QVBoxLayout(page)
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.setSpacing(15)
+
+        # Header
+        header = QVBoxLayout()
+        header.setSpacing(4)
+
+        eyebrow = QLabel("TASKFORGE / ORGANIZATION")
+        eyebrow.setObjectName("categoriesEyebrow")
+
+        title = QLabel("Categories")
+        title.setObjectName("categoriesTitle")
+
+        subtitle = QLabel(
+            "Organize your tasks and keep everything structured."
+        )
+        subtitle.setObjectName("categoriesSubtitle")
+
+        header.addWidget(eyebrow)
+        header.addWidget(title)
+        header.addWidget(subtitle)
+
+        layout.addLayout(header)
+
+        # Main panel
+        panel = QFrame()
+        panel.setObjectName("categoriesPanel")
+
+        panel_layout = QVBoxLayout(panel)
+        panel_layout.setContentsMargins(16, 15, 16, 15)
+        panel_layout.setSpacing(13)
+
+        # Panel header
+        panel_header = QHBoxLayout()
+
+        section_title = QLabel("Your Categories")
+        section_title.setObjectName("categoriesSectionTitle")
+
+        self.category_count_label = QLabel("0 categories")
+        self.category_count_label.setObjectName("categoryCount")
+
+        panel_header.addWidget(section_title)
+        panel_header.addStretch()
+        panel_header.addWidget(self.category_count_label)
+
+        panel_layout.addLayout(panel_header)
+
+        # Actions
         actions = QHBoxLayout()
+        actions.setSpacing(9)
 
         add_button = QPushButton("+ Add Category")
         add_button.setObjectName("primaryButton")
-        add_button.clicked.connect(lambda checked=False: self.open_add_category())
+        add_button.clicked.connect(
+            lambda checked=False: self.open_add_category()
+        )
+
         edit_button = QPushButton("Edit Selected")
         edit_button.setObjectName("secondaryButton")
-        edit_button.clicked.connect(lambda checked=False: self.edit_selected_category())
+        edit_button.clicked.connect(
+            lambda checked=False: self.edit_selected_category()
+        )
+
         delete_button = QPushButton("Delete Selected")
         delete_button.setObjectName("dangerButton")
-        delete_button.clicked.connect(lambda checked=False: self.delete_selected_category())
+        delete_button.clicked.connect(
+            lambda checked=False: self.delete_selected_category()
+        )
+
         actions.addWidget(add_button)
         actions.addWidget(edit_button)
         actions.addWidget(delete_button)
         actions.addStretch()
-        layout.addLayout(actions)
 
+        panel_layout.addLayout(actions)
+
+        # Categories list
         self.categories_list = QListWidget()
-        self.categories_list.itemDoubleClicked.connect(lambda item: self.edit_selected_category(item))
-        layout.addWidget(self.categories_list)
+        self.categories_list.setSpacing(4)
+
+        self.categories_list.itemDoubleClicked.connect(
+            lambda item: self.edit_selected_category(item)
+        )
+
+        panel_layout.addWidget(self.categories_list, 1)
+
+        layout.addWidget(panel, 1)
+
         return page
 
     def build_completed_page(self):
         page = QWidget()
+        page.setObjectName("completedPage")
+
+        page.setStyleSheet("""
+            QWidget#completedPage {
+                background: transparent;
+                color: #F2EAF9;
+            }
+
+            QLabel#completedEyebrow {
+                color: #A58AF5;
+                font-size: 10px;
+                font-weight: bold;
+                letter-spacing: 2px;
+            }
+
+            QLabel#completedTitle {
+                color: #F2EAF9;
+                font-size: 27px;
+                font-weight: bold;
+            }
+
+            QLabel#completedSubtitle {
+                color: #A69AAF;
+                font-size: 12px;
+            }
+
+            QFrame#completedPanel {
+                background-color: #1B1624;
+                border: 1px solid #352A42;
+                border-radius: 14px;
+            }
+
+            QLabel#completedSectionTitle {
+                color: #D6C8F4;
+                font-size: 17px;
+                font-weight: bold;
+            }
+
+            QLabel#completedCount {
+                color: #E9C5DF;
+                background-color: #30263B;
+                border: 1px solid #493957;
+                border-radius: 9px;
+                padding: 7px 12px;
+                font-weight: bold;
+            }
+
+            QListWidget {
+                background-color: #15111C;
+                color: #F2EAF9;
+                border: 1px solid #352A42;
+                border-radius: 10px;
+                padding: 8px;
+                outline: none;
+            }
+
+            QListWidget::item {
+                background-color: #1D1727;
+                color: #E9DFF1;
+                padding: 14px;
+                margin: 3px;
+                border: 1px solid #30263B;
+                border-radius: 8px;
+            }
+
+            QListWidget::item:hover {
+                background-color: #292136;
+                border-color: #57446D;
+            }
+
+            QListWidget::item:selected {
+                background-color: #392B4D;
+                border-color: #A58AF5;
+                color: #FFFFFF;
+            }
+        """)
+
         layout = QVBoxLayout(page)
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.setSpacing(15)
+
+        # Header
+        header = QVBoxLayout()
+        header.setSpacing(4)
+
+        eyebrow = QLabel("TASKFORGE / ACHIEVEMENTS")
+        eyebrow.setObjectName("completedEyebrow")
+
+        title = QLabel("Completed Tasks")
+        title.setObjectName("completedTitle")
+
+        subtitle = QLabel(
+            "Everything you've successfully accomplished."
+        )
+        subtitle.setObjectName("completedSubtitle")
+
+        header.addWidget(eyebrow)
+        header.addWidget(title)
+        header.addWidget(subtitle)
+
+        layout.addLayout(header)
+
+        # Main panel
+        panel = QFrame()
+        panel.setObjectName("completedPanel")
+
+        panel_layout = QVBoxLayout(panel)
+        panel_layout.setContentsMargins(16, 15, 16, 15)
+        panel_layout.setSpacing(13)
+
+        # Panel header
+        panel_header = QHBoxLayout()
+
+        section_title = QLabel("Your Achievements")
+        section_title.setObjectName("completedSectionTitle")
+
+        self.completed_count_label = QLabel("0 completed")
+        self.completed_count_label.setObjectName("completedCount")
+
+        panel_header.addWidget(section_title)
+        panel_header.addStretch()
+        panel_header.addWidget(self.completed_count_label)
+
+        panel_layout.addLayout(panel_header)
+
+        # Completed tasks list
         self.completed_list = QListWidget()
-        layout.addWidget(self.completed_list)
+        self.completed_list.setSpacing(4)
+
+        panel_layout.addWidget(self.completed_list, 1)
+
+        layout.addWidget(panel, 1)
+
         return page
 
     def switch_page(self, index):
@@ -598,6 +1375,30 @@ class MainWindow(QMainWindow):
             completed = [task for task in self.all_tasks if task[7] == "completed"]
             in_progress = [task for task in self.all_tasks if task[7] == "in_progress"]
             overdue = [task for task in self.all_tasks if self.task_is_overdue(task)]
+            # Calculate overall completion rate.
+            completion_rate = (
+                round(len(completed) / len(self.all_tasks) * 100)
+                if self.all_tasks
+                else 0
+            )
+
+            self.completion_rate_value.setText(
+                f"{completion_rate}%"
+            )
+
+            self.completion_progress.setValue(
+                completion_rate
+            )
+
+            if self.all_tasks:
+                self.completion_description.setText(
+                    f"{len(completed)} of {len(self.all_tasks)} "
+                    "tasks completed."
+                )
+            else:
+                self.completion_description.setText(
+                    "Create your first task to get started."
+                )
 
             self.total_value.setText(str(len(self.all_tasks)))
             self.progress_value.setText(str(len(in_progress)))
@@ -612,14 +1413,62 @@ class MainWindow(QMainWindow):
             self.refresh_task_list()
 
             self.categories_list.clear()
+
+            self.category_count_label.setText(
+                f"{len(self.all_categories)} "
+                f"categor{'y' if len(self.all_categories) == 1 else 'ies'}"
+            )
+
             for category in self.all_categories:
+                item = QListWidgetItem(
+                    f"{category[1]}   ({category[2]})"
+                )
+
+                item.setData(
+                    Qt.ItemDataRole.UserRole,
+                    category[0]
+                )
+
+                # Preserve the user's category color.
+                item.setForeground(
+                    QBrush(QColor(category[2]))
+                )
+
+                self.categories_list.addItem(item)
                 item = QListWidgetItem(f"{category[1]}   ({category[2]})")
                 item.setData(Qt.ItemDataRole.UserRole, category[0])
                 item.setForeground(QBrush(QColor(category[2])))
-                self.categories_list.addItem(item)
 
-            self.completed_list.clear()
-            for task in sorted(completed, key=lambda row: row[0], reverse=True):
+                self.completed_list.clear()
+
+                self.completed_count_label.setText(
+                    f"{len(completed)} completed"
+                )
+
+                sorted_completed = sorted(
+                    completed,
+                    key=lambda row: row[0],
+                    reverse=True
+                )
+
+                for display_number, task in enumerate(
+                        sorted_completed,
+                        start=1
+                ):
+                    item = QListWidgetItem(
+                        self.format_task(task, display_number)
+                    )
+
+                    item.setData(
+                        Qt.ItemDataRole.UserRole,
+                        task[0]
+                    )
+
+                    self.completed_list.addItem(item)
+
+                self.history_page.refresh_data()
+                self.statistics_page.refresh_data()
+
                 item = QListWidgetItem(self.format_task(task))
                 item.setData(Qt.ItemDataRole.UserRole, task[0])
                 self.completed_list.addItem(item)
@@ -761,6 +1610,19 @@ class MainWindow(QMainWindow):
                 task for task in tasks
                 if task[8] == category_value
             ]
+            # Update filtered task counter.
+            task_count = len(tasks)
+
+            self.task_count_label.setText(
+                f"{task_count} task{'s' if task_count != 1 else ''}"
+            )
+            # Update filtered task counter
+            task_count = len(tasks)
+
+            self.task_count_label.setText(
+                f"{task_count} task{'s' if task_count != 1 else ''}"
+            )
+
 
         # Sorting
         if sort_value == "title":
@@ -823,7 +1685,7 @@ class MainWindow(QMainWindow):
             item.setData(Qt.ItemDataRole.UserRole, task[0])
 
             if self.task_is_overdue(task):
-                item.setForeground(QBrush(QColor("#c0392b")))
+                item.setForeground(QBrush(QColor("#E9AFCF")))
 
             self.tasks_list.addItem(item)
 

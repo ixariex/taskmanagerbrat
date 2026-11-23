@@ -1,5 +1,5 @@
 
-from datetime import datetime, date
+from datetime import datetime
 
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import (
@@ -41,10 +41,28 @@ class HistoryWidget(QWidget):
                 font-family: "Segoe UI";
             }
 
+            QLabel#historyEyebrow {
+                color: #A58AF5;
+                font-size: 10px;
+                font-weight: bold;
+                letter-spacing: 2px;
+            }
+
+            QLabel#historyTitle {
+                color: #F2EAF9;
+                font-size: 27px;
+                font-weight: bold;
+            }
+
+            QLabel#historySubtitle {
+                color: #A69AAF;
+                font-size: 12px;
+            }
+
             QFrame#historyStatCard {
                 background-color: #1B1624;
                 border: 1px solid #3A2D48;
-                border-radius: 14px;
+                border-radius: 13px;
             }
 
             QFrame#historyStatCard:hover {
@@ -53,46 +71,63 @@ class HistoryWidget(QWidget):
             }
 
             QLabel#statTitle {
-                color: #B8A9C9;
-                font-size: 13px;
+                color: #A69AAF;
+                font-size: 12px;
             }
 
             QLabel#statValue {
                 color: #D6C8F4;
-                font-size: 27px;
+                font-size: 23px;
                 font-weight: bold;
             }
 
+            QFrame#historyPanel {
+                background-color: #1B1624;
+                border: 1px solid #3A2D48;
+                border-radius: 14px;
+            }
+
             QLabel#historySectionTitle {
-                font-size: 19px;
+                font-size: 17px;
                 font-weight: bold;
                 color: #E9C5DF;
             }
 
+            QLabel#historyCount {
+                color: #D6C8F4;
+                background-color: #30263B;
+                border: 1px solid #493957;
+                border-radius: 9px;
+                padding: 7px 12px;
+                font-weight: bold;
+            }
+
             QListWidget {
-                background-color: #191421;
+                background-color: #15111C;
                 color: #F2EAF9;
                 border: 1px solid #352A42;
-                border-radius: 12px;
-                padding: 10px;
+                border-radius: 10px;
+                padding: 8px;
                 outline: none;
             }
 
             QListWidget::item {
-                background-color: transparent;
+                background-color: #1D1727;
                 color: #E9DFF1;
-                padding: 15px;
-                border-bottom: 1px solid #30273A;
-                border-radius: 7px;
+                padding: 13px;
+                margin: 3px;
+                border: 1px solid #30263B;
+                border-radius: 8px;
             }
 
             QListWidget::item:hover {
-                background-color: #282034;
+                background-color: #292136;
+                border-color: #57446D;
             }
 
             QListWidget::item:selected {
                 background-color: #392B4D;
-                color: #E5D6FF;
+                border-color: #A58AF5;
             }
 
             QScrollBar:vertical {
@@ -125,13 +160,34 @@ class HistoryWidget(QWidget):
             }
         """)
 
-
         main_layout = QVBoxLayout(self)
-        main_layout.setSpacing(20)
+        main_layout.setContentsMargins(0, 0, 0, 0)
+        main_layout.setSpacing(15)
+
+        # Header
+        header = QVBoxLayout()
+        header.setSpacing(4)
+
+        eyebrow = QLabel("TASKFORGE / PRODUCTIVITY")
+        eyebrow.setObjectName("historyEyebrow")
+
+        title = QLabel("Focus History")
+        title.setObjectName("historyTitle")
+
+        subtitle = QLabel(
+            "Review your completed focus sessions and track your progress."
+        )
+        subtitle.setObjectName("historySubtitle")
+
+        header.addWidget(eyebrow)
+        header.addWidget(title)
+        header.addWidget(subtitle)
+
+        main_layout.addLayout(header)
 
         # Statistics cards
         cards_layout = QHBoxLayout()
-        cards_layout.setSpacing(15)
+        cards_layout.setSpacing(12)
 
         card, self.total_sessions_value = self.make_stat_card(
             "Total Sessions"
@@ -155,22 +211,35 @@ class HistoryWidget(QWidget):
 
         main_layout.addLayout(cards_layout)
 
-        # History section
+        # History panel
+        panel = QFrame()
+        panel.setObjectName("historyPanel")
+
+        panel_layout = QVBoxLayout(panel)
+        panel_layout.setContentsMargins(16, 15, 16, 15)
+        panel_layout.setSpacing(13)
+
         section_header = QHBoxLayout()
 
         section_title = QLabel("Completed Focus Sessions")
         section_title.setObjectName("historySectionTitle")
 
+        self.history_count_label = QLabel("0 sessions")
+        self.history_count_label.setObjectName("historyCount")
+
         section_header.addWidget(section_title)
         section_header.addStretch()
+        section_header.addWidget(self.history_count_label)
 
-        main_layout.addLayout(section_header)
+        panel_layout.addLayout(section_header)
 
-        # Sessions list
         self.sessions_list = QListWidget()
+        self.sessions_list.setSpacing(4)
         self.sessions_list.setAlternatingRowColors(False)
 
-        main_layout.addWidget(self.sessions_list)
+        panel_layout.addWidget(self.sessions_list, 1)
+
+        main_layout.addWidget(panel, 1)
 
     # =====================================
     # STATISTICS CARD
@@ -183,8 +252,8 @@ class HistoryWidget(QWidget):
         card.setObjectName("historyStatCard")
 
         layout = QVBoxLayout(card)
-        layout.setContentsMargins(18, 18, 18, 18)
-        layout.setSpacing(10)
+        layout.setContentsMargins(15, 14, 15, 14)
+        layout.setSpacing(8)
 
         title_label = QLabel(title)
         title_label.setObjectName("statTitle")
@@ -284,6 +353,10 @@ class HistoryWidget(QWidget):
 
             # Update history list
             self.sessions_list.clear()
+
+            self.history_count_label.setText(
+                f"{len(sessions)} sessions"
+            )
 
             if not sessions:
 
