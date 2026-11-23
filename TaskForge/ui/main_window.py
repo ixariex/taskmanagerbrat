@@ -115,7 +115,7 @@ class MainWindow(QMainWindow):
             "My Tasks",
             "Categories",
             "Completed",
-            "Pomodoro"
+            "Timer"
         ]
 
         for index, page_name in enumerate(pages):

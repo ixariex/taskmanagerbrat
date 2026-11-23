@@ -69,10 +69,31 @@ def create_db() -> None:
 
         if "deadline" not in task_columns:
             conn.execute("ALTER TABLE tasks ADD COLUMN deadline TEXT")
+
         if "status" not in task_columns:
             conn.execute(
                 "ALTER TABLE tasks ADD COLUMN status TEXT NOT NULL DEFAULT 'new'"
             )
+        # Pomodoro session history
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS pomodoro_sessions (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                task_id INTEGER,
+                task_title TEXT NOT NULL,
+                started_at TEXT NOT NULL,
+                completed_at TEXT NOT NULL,
+                duration_seconds INTEGER NOT NULL
+                    CHECK(duration_seconds > 0),
+                FOREIGN KEY (task_id)
+                    REFERENCES tasks(id)
+                    ON DELETE SET NULL
+            )
+        """)
+
+        conn.execute("""
+            CREATE INDEX IF NOT EXISTS idx_pomodoro_sessions_task
+            ON pomodoro_sessions(task_id)
+        """)
 
     print("Database created successfully")
 
