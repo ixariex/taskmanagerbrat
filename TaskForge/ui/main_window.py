@@ -36,12 +36,17 @@ from core.task_manager import (
     remove_task,
     set_task_category,
 )
+from optimizer_bridge import (
+    optimize_tasks as optimize_task_rows,
+    calculate_task_priority,
+)
 from ui.category_dialog import CategoryDialog
 from ui.task_dialog import TaskDialog
 
 from ui.pomodoro_widget import PomodoroWidget
 from ui.history_widget import HistoryWidget
 from ui.statistics_widget import StatisticsWidget
+
 
 
 STYLESHEET = """
@@ -79,6 +84,9 @@ class MainWindow(QMainWindow):
         self.setStyleSheet(STYLESHEET)
         self.all_tasks = []
         self.all_categories = []
+        self.optimized_task_order = {}
+        self.optimized_task_priorities = {}
+        self.optimized_task_source = None
 
         root = QWidget()
         root.setObjectName("appRoot")
@@ -260,20 +268,36 @@ class MainWindow(QMainWindow):
         self.sort_filter.addItem("Deadline soonest", "deadline")
         self.sort_filter.addItem("Importance highest", "importance")
         self.sort_filter.addItem("Urgency highest", "urgency")
+        self.sort_filter.addItem("C++ Priority", "priority")
         self.sort_filter.currentIndexChanged.connect(self.refresh_task_list)
         filters.addWidget(self.sort_filter)
         layout.addLayout(filters)
 
         actions = QHBoxLayout()
+
         edit_button = QPushButton("Edit Selected")
         edit_button.setObjectName("primaryButton")
-        edit_button.clicked.connect(lambda checked=False: self.edit_selected_task())
+        edit_button.clicked.connect(
+            lambda checked=False: self.edit_selected_task()
+        )
+
         delete_button = QPushButton("Delete Selected")
         delete_button.setObjectName("dangerButton")
-        delete_button.clicked.connect(lambda checked=False: self.delete_selected_task())
+        delete_button.clicked.connect(
+            lambda checked=False: self.delete_selected_task()
+        )
+
+        optimize_button = QPushButton("Optimize Tasks")
+        optimize_button.setObjectName("primaryButton")
+        optimize_button.clicked.connect(
+            lambda checked=False: self.optimize_task_list()
+        )
+
         actions.addWidget(edit_button)
         actions.addWidget(delete_button)
         actions.addStretch()
+        actions.addWidget(optimize_button)
+
         layout.addLayout(actions)
 
         self.tasks_list = QListWidget()
@@ -335,11 +359,17 @@ class MainWindow(QMainWindow):
         self.refresh_data()
 
     @staticmethod
-    def format_task(task):
+    def format_task(task, display_number=None):
         deadline = task[6] or "No deadline"
         status = task[7].replace("_", " ").title()
         title = task[1]
-        return f"#{task[0]}   {title}   |   {status}   |   Deadline: {deadline}"
+
+        number = task[0] if display_number is None else display_number
+
+        return (
+            f"#{number}   {title}   |   "
+            f"{status}   |   Deadline: {deadline}"
+        )
 
     @staticmethod
     def task_is_overdue(task) -> bool:
@@ -349,6 +379,26 @@ class MainWindow(QMainWindow):
         try:
             self.all_tasks = get_tasks()
             self.all_categories = get_categories()
+            current_optimizer_source = self._optimizer_signature(
+                self.all_tasks
+            )
+
+            if (
+                    self.optimized_task_source is not None
+                    and current_optimizer_source != self.optimized_task_source
+            ):
+                # Optimization results are no longer valid.
+                self.optimized_task_order = {}
+                self.optimized_task_priorities = {}
+                self.optimized_task_source = None
+
+                # Return to the default sorting mode if C++ priority was selected.
+                if self.sort_filter.currentData() == "priority":
+                    self.sort_filter.blockSignals(True)
+                    self.sort_filter.setCurrentIndex(
+                        self.sort_filter.findData("newest")
+                    )
+                    self.sort_filter.blockSignals(False)
 
             completed = [task for task in self.all_tasks if task[7] == "completed"]
             in_progress = [task for task in self.all_tasks if task[7] == "in_progress"]
@@ -398,41 +448,188 @@ class MainWindow(QMainWindow):
         self.category_filter.setCurrentIndex(index if index >= 0 else 0)
         self.category_filter.blockSignals(False)
 
+    @staticmethod
+    def _optimizer_signature(tasks):
+        """
+        Build a snapshot of fields that affect C++ optimization.
+        """
+
+        return tuple(
+            (
+                int(task[0]),
+                int(task[3]),
+                int(task[4]),
+                int(task[5]),
+                str(task[7]),
+            )
+            for task in tasks
+            if task[7] in {"new", "in_progress"}
+        )
+
+    def optimize_task_list(self):
+        try:
+            # Only unfinished tasks participate in optimization.
+            active_tasks = [
+                task for task in self.all_tasks
+                if task[7] in {"new", "in_progress"}
+            ]
+
+            if not active_tasks:
+                QMessageBox.information(
+                    self,
+                    "Task Optimizer",
+                    "There are no unfinished tasks to optimize."
+                )
+                return
+
+            # Send real database tasks to the C++ optimizer.
+            optimized_tasks = optimize_task_rows(active_tasks)
+
+            if not optimized_tasks:
+                QMessageBox.information(
+                    self,
+                    "Task Optimizer",
+                    "No tasks were returned by the optimizer."
+                )
+                return
+
+            # Store the optimized order.
+            self.optimized_task_order = {
+                int(task[0]): index
+                for index, task in enumerate(optimized_tasks)
+            }
+
+            # Calculate priorities using C++.
+            self.optimized_task_priorities = {
+                int(task[0]): calculate_task_priority(task)
+                for task in optimized_tasks
+            }
+
+            self.optimized_task_source = self._optimizer_signature(
+                active_tasks
+            )
+
+            # Switch the task list to C++ priority sorting.
+            priority_index = self.sort_filter.findData("priority")
+            self.sort_filter.setCurrentIndex(priority_index)
+
+            self.refresh_task_list()
+
+            QMessageBox.information(
+                self,
+                "Optimization Complete",
+                f"Successfully optimized {len(optimized_tasks)} tasks!"
+            )
+
+        except Exception as error:
+            QMessageBox.critical(
+                self,
+                "Optimization Error",
+                f"Could not optimize tasks:\n{error}"
+            )
+
     def refresh_task_list(self, *_args):
         if not hasattr(self, "tasks_list"):
             return
+
         tasks = list(self.all_tasks)
+
         query = self.search_input.text().strip().casefold()
         status_value = self.status_filter.currentData()
         category_value = self.category_filter.currentData()
         sort_value = self.sort_filter.currentData()
 
+        # Search filter
         if query:
-            tasks = [task for task in tasks if query in (task[1] or "").casefold() or query in (task[2] or "").casefold()]
-        if status_value != "all":
-            tasks = [task for task in tasks if task[7] == status_value]
-        if category_value == "uncategorized":
-            tasks = [task for task in tasks if task[8] is None]
-        elif category_value != "all":
-            tasks = [task for task in tasks if task[8] == category_value]
+            tasks = [
+                task for task in tasks
+                if query in (task[1] or "").casefold()
+                   or query in (task[2] or "").casefold()
+            ]
 
+        # Status filter
+        if status_value != "all":
+            tasks = [
+                task for task in tasks
+                if task[7] == status_value
+            ]
+
+        # Category filter
+        if category_value == "uncategorized":
+            tasks = [
+                task for task in tasks
+                if task[8] is None
+            ]
+
+        elif category_value != "all":
+            tasks = [
+                task for task in tasks
+                if task[8] == category_value
+            ]
+
+        # Sorting
         if sort_value == "title":
-            tasks.sort(key=lambda task: (task[1] or "").casefold())
+            tasks.sort(
+                key=lambda task: (task[1] or "").casefold()
+            )
+
         elif sort_value == "deadline":
-            tasks.sort(key=lambda task: (task[6] is None, task[6] or "9999-12-31"))
+            tasks.sort(
+                key=lambda task: (
+                    task[6] is None,
+                    task[6] or "9999-12-31"
+                )
+            )
+
         elif sort_value == "importance":
-            tasks.sort(key=lambda task: task[3], reverse=True)
+            tasks.sort(
+                key=lambda task: task[3],
+                reverse=True
+            )
+
         elif sort_value == "urgency":
-            tasks.sort(key=lambda task: task[4], reverse=True)
+            tasks.sort(
+                key=lambda task: task[4],
+                reverse=True
+            )
+
+        elif sort_value == "priority":
+            tasks.sort(
+                key=lambda task: (
+                    task[7] == "completed",
+                    self.optimized_task_order.get(
+                        task[0],
+                        float("inf")
+                    )
+                )
+            )
+
         else:
-            tasks.sort(key=lambda task: task[0], reverse=True)
+            # Newest first
+            tasks.sort(
+                key=lambda task: task[0],
+                reverse=True
+            )
+
+        # IMPORTANT: Render the list AFTER sorting,
+        # regardless of which sorting option is selected.
 
         self.tasks_list.clear()
-        for task in tasks:
-            item = QListWidgetItem(self.format_task(task))
+
+        for display_number, task in enumerate(tasks, start=1):
+
+            task_text = self.format_task(task, display_number)
+
+            if task[0] in self.optimized_task_priorities:
+                priority = self.optimized_task_priorities[task[0]]
+                task_text += f"   |   Priority: {priority:.2f}"
+
+            item = QListWidgetItem(task_text)
             item.setData(Qt.ItemDataRole.UserRole, task[0])
+
             if self.task_is_overdue(task):
                 item.setForeground(QBrush(QColor("#c0392b")))
+
             self.tasks_list.addItem(item)
 
     def open_add_task(self):

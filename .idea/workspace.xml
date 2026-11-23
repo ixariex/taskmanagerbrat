@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0c0f23d-7de3-4903-b716-6db1ba9618d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cpp/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cpp/bindings.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cpp/gitignore.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cpp/optimizer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TaskForge/optimizer_bridge.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TaskForge/test_optimizer_bridge.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TaskForge/test_optimizer_edge_cases.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cpp/optimizer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TaskForge_rebuilt.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TaskForge_rebuilt.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskForge/database/data/taskforge.db" beforeDir="false" afterPath="$PROJECT_DIR$/TaskForge/database/data/taskforge.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TaskForge/ui/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/TaskForge/ui/main_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +46,8 @@
     "Python.app.executor": "Run",
     "Python.main_window.executor": "Run",
     "Python.pomodoro_preview.executor": "Run",
+    "Python.test_optimizer_bridge.executor": "Run",
+    "Python.test_optimizer_edge_cases.executor": "Run",
     "Python.test_pomodoro_repository.executor": "Run",
     "Python.test_pomodoro_statistics.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -55,8 +62,37 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.app">
-    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\githubproj\taskmanagerbrat\cpp" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.test_optimizer_edge_cases">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="TaskForge_rebuilt" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="VIRTUAL_ENV" value="F:\githubproj\taskmanagerbrat\.venv" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="false" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="build_optimizer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TaskForge_rebuilt" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -71,31 +107,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="DEBUG_JUST_MY_CODE" value="false" />
       <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main_window" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TaskForge_rebuilt" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Taskforge/ui" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="DEBUG_JUST_MY_CODE" value="false" />
-      <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Taskforge/ui/main_window.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/build_optimizer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -128,6 +140,54 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test_optimizer_bridge" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TaskForge_rebuilt" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Taskforge" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Taskforge/test_optimizer_bridge.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_optimizer_edge_cases" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TaskForge_rebuilt" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Taskforge" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Taskforge/test_optimizer_edge_cases.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test_pomodoro_statistics" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TaskForge_rebuilt" />
       <option name="ENV_FILES" value="" />
@@ -152,12 +212,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.app" />
+      <item itemvalue="Python.build_optimizer" />
+      <item itemvalue="Python.pomodoro_preview" />
+      <item itemvalue="Python.test_optimizer_bridge" />
+      <item itemvalue="Python.test_optimizer_edge_cases" />
+      <item itemvalue="Python.test_pomodoro_statistics" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.app" />
+        <item itemvalue="Python.test_optimizer_edge_cases" />
+        <item itemvalue="Python.build_optimizer" />
+        <item itemvalue="Python.test_optimizer_bridge" />
         <item itemvalue="Python.test_pomodoro_statistics" />
         <item itemvalue="Python.pomodoro_preview" />
-        <item itemvalue="Python.main_window" />
       </list>
     </recent_temporary>
   </component>
