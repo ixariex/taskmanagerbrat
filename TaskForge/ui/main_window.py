@@ -268,7 +268,7 @@ class MainWindow(QMainWindow):
         self.sort_filter.addItem("Deadline soonest", "deadline")
         self.sort_filter.addItem("Importance highest", "importance")
         self.sort_filter.addItem("Urgency highest", "urgency")
-        self.sort_filter.addItem("C++ Priority", "priority")
+        self.sort_filter.addItem("Smart priority", "priority")
         self.sort_filter.currentIndexChanged.connect(self.refresh_task_list)
         filters.addWidget(self.sort_filter)
         layout.addLayout(filters)

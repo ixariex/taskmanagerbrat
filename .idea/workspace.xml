@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0c0f23d-7de3-4903-b716-6db1ba9618d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TaskForge/optimizer_bridge.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TaskForge/test_optimizer_bridge.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TaskForge/test_optimizer_edge_cases.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cpp/optimizer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TaskForge_rebuilt.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TaskForge_rebuilt.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskForge/database/data/taskforge.db" beforeDir="false" afterPath="$PROJECT_DIR$/TaskForge/database/data/taskforge.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskForge/ui/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/TaskForge/ui/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/uv.lock" afterDir="false" />
-    </list>
+    <list default="true" id="b0c0f23d-7de3-4903-b716-6db1ba9618d4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +33,7 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.app.executor": "Run",
+    "Python.build_optimizer.executor": "Run",
     "Python.main_window.executor": "Run",
     "Python.pomodoro_preview.executor": "Run",
     "Python.test_optimizer_bridge.executor": "Run",
@@ -67,7 +57,7 @@
       <recent name="F:\githubproj\taskmanagerbrat\cpp" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test_optimizer_edge_cases">
+  <component name="RunManager" selected="Python.app">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="TaskForge_rebuilt" />
       <option name="ENV_FILES" value="" />
