@@ -13,7 +13,6 @@ from PyQt6.QtWidgets import (
     QLineEdit,
     QListWidget,
     QListWidgetItem,
-    QMessageBox,
     QPushButton,
     QStackedWidget,
     QVBoxLayout,
@@ -43,6 +42,7 @@ from optimizer_bridge import (
 )
 from ui.category_dialog import CategoryDialog
 from ui.task_dialog import TaskDialog
+from ui.silent_message_box import SilentMessageBox as QMessageBox
 
 from ui.pomodoro_widget import PomodoroWidget
 from ui.history_widget import HistoryWidget
@@ -1406,8 +1406,17 @@ class MainWindow(QMainWindow):
             self.overdue_value.setText(str(len(overdue)))
 
             self.recent_list.clear()
-            for task in sorted(self.all_tasks, key=lambda row: row[0], reverse=True)[:5]:
-                self.recent_list.addItem(self.format_task(task))
+
+            recent_tasks = sorted(
+                self.all_tasks,
+                key=lambda row: row[0],
+                reverse=True
+            )[:5]
+
+            for number, task in enumerate(recent_tasks, start=1):
+                self.recent_list.addItem(
+                    self.format_task(task, display_number=number)
+                )
 
             self.refresh_category_filter()
             self.refresh_task_list()
@@ -1423,57 +1432,42 @@ class MainWindow(QMainWindow):
                 item = QListWidgetItem(
                     f"{category[1]}   ({category[2]})"
                 )
-
                 item.setData(
                     Qt.ItemDataRole.UserRole,
                     category[0]
                 )
-
-                # Preserve the user's category color.
                 item.setForeground(
                     QBrush(QColor(category[2]))
                 )
-
                 self.categories_list.addItem(item)
-                item = QListWidgetItem(f"{category[1]}   ({category[2]})")
-                item.setData(Qt.ItemDataRole.UserRole, category[0])
-                item.setForeground(QBrush(QColor(category[2])))
 
-                self.completed_list.clear()
+            # Refresh the Completed page independently of the categories list.
+            self.completed_list.clear()
+            self.completed_count_label.setText(
+                f"{len(completed)} completed"
+            )
 
-                self.completed_count_label.setText(
-                    f"{len(completed)} completed"
+            sorted_completed = sorted(
+                completed,
+                key=lambda row: row[0],
+                reverse=True
+            )
+
+            for display_number, task in enumerate(
+                sorted_completed,
+                start=1
+            ):
+                item = QListWidgetItem(
+                    self.format_task(task, display_number)
                 )
-
-                sorted_completed = sorted(
-                    completed,
-                    key=lambda row: row[0],
-                    reverse=True
+                item.setData(
+                    Qt.ItemDataRole.UserRole,
+                    task[0]
                 )
-
-                for display_number, task in enumerate(
-                        sorted_completed,
-                        start=1
-                ):
-                    item = QListWidgetItem(
-                        self.format_task(task, display_number)
-                    )
-
-                    item.setData(
-                        Qt.ItemDataRole.UserRole,
-                        task[0]
-                    )
-
-                    self.completed_list.addItem(item)
-
-                self.history_page.refresh_data()
-                self.statistics_page.refresh_data()
-
-                item = QListWidgetItem(self.format_task(task))
-                item.setData(Qt.ItemDataRole.UserRole, task[0])
                 self.completed_list.addItem(item)
-                self.history_page.refresh_data()
-                self.statistics_page.refresh_data()
+
+            self.history_page.refresh_data()
+            self.statistics_page.refresh_data()
 
         except Exception as error:
             QMessageBox.critical(self, "Loading Error", f"Could not load data:\n{error}")

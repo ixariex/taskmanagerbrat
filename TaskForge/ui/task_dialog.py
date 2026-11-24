@@ -25,7 +25,7 @@ class TaskDialog(QDialog):
         super().__init__(parent)
         self.task = task
         self.setWindowTitle("Edit Task" if task is not None else "Create New Task")
-        self.setMinimumWidth(470)
+        self.setMinimumWidth(570)
 
         main_layout = QVBoxLayout(self)
         form = QFormLayout()

@@ -13,11 +13,11 @@ from PyQt6.QtWidgets import (
     QFrame,
     QComboBox,
     QSizePolicy,
-    QMessageBox,
 )
 
 from core.task_manager import get_tasks
 from database.pomodoro_repository import add_completed_session
+from ui.silent_message_box import SilentMessageBox as QMessageBox
 
 
 class PomodoroWidget(QWidget):
@@ -408,8 +408,14 @@ class PomodoroWidget(QWidget):
             self.reset_timer
         )
 
+        self.stop_cycle_button = QPushButton("Stop Cycle")
+        self.stop_cycle_button.setObjectName("resetButton")
+        self.stop_cycle_button.setMinimumWidth(105)
+        self.stop_cycle_button.clicked.connect(self.stop_cycle)
+
         buttons_layout.addWidget(self.start_button)
         buttons_layout.addWidget(self.reset_button)
+        buttons_layout.addWidget(self.stop_cycle_button)
 
         self.card_layout.addLayout(buttons_layout)
 
@@ -589,7 +595,6 @@ class PomodoroWidget(QWidget):
                 return
 
             if self.session_started_at is None:
-
                 self.session_task_id = self.selected_task_id
                 self.session_task_title = (
                     self.task_selector.currentText()
@@ -609,25 +614,32 @@ class PomodoroWidget(QWidget):
         self.timer.start()
         self.is_running = True
 
-        self.task_selector.setEnabled(False)
-        self.refresh_tasks_button.setEnabled(False)
+        # During a break, allow choosing the task for the next focus session.
+        controls_enabled = self.mode != "work"
+        self.task_selector.setEnabled(controls_enabled)
+        self.refresh_tasks_button.setEnabled(controls_enabled)
 
-        self.start_button.setText("Pause")
+        if self.mode == "work":
+            self.message_label.setText(
+                "Stay focused. Keep going!"
+            )
+        else:
+            self.message_label.setText(
+                "Enjoy your break. Recharge!"
+            )
 
-        self.message_label.setText(
-            "Stay focused. Keep going!"
-        )
+        self.update_display()
 
     def pause_timer(self):
 
         self.timer.stop()
         self.is_running = False
 
-        self.start_button.setText("Resume")
-
         self.message_label.setText(
             "Timer paused."
         )
+
+        self.update_display()
 
     def reset_timer(self):
 
@@ -642,10 +654,28 @@ class PomodoroWidget(QWidget):
         self.task_selector.setEnabled(True)
         self.refresh_tasks_button.setEnabled(True)
 
-        self.start_button.setText("Start Focus")
-
         self.message_label.setText(
             "Timer reset."
+        )
+
+        self.update_display()
+
+    def stop_cycle(self):
+        """Stop automatic phase switching and return to a fresh focus timer."""
+        self.timer.stop()
+        self.is_running = False
+
+        # An unfinished focus session is deliberately not written to history.
+        self.clear_active_session()
+
+        self.mode = "work"
+        self.remaining_seconds = self.WORK_SECONDS
+
+        self.task_selector.setEnabled(True)
+        self.refresh_tasks_button.setEnabled(True)
+
+        self.message_label.setText(
+            "Pomodoro cycle stopped. Ready when you are."
         )
 
         self.update_display()
@@ -725,66 +755,47 @@ class PomodoroWidget(QWidget):
 
     def finish_phase(self):
 
-        self.start_button.setText("Start Focus")
-
+        # Re-enable task controls between phases. start_timer() will lock
+        # them again during focus and keep them available during breaks.
         self.task_selector.setEnabled(True)
         self.refresh_tasks_button.setEnabled(True)
 
         if self.mode == "work":
 
             session_saved = self.save_completed_session()
-
             self.completed_work_sessions += 1
 
             if (
                 self.completed_work_sessions
                 % self.SESSIONS_BEFORE_LONG_BREAK == 0
             ):
-
                 self.mode = "long_break"
-
-                if session_saved:
-                    self.message_label.setText(
-                        "Session saved! Time for a long break."
-                    )
-                else:
-                    self.message_label.setText(
-                        "Session completed, but history was not saved."
-                    )
-
             else:
-
                 self.mode = "short_break"
 
-                if session_saved:
-                    self.message_label.setText(
-                        "Session saved! Take a short break."
-                    )
-                else:
-                    self.message_label.setText(
-                        "Session completed, but history was not saved."
-                    )
+            if session_saved:
+                self.message_label.setText(
+                    "Session saved! Enjoy your break."
+                )
+            else:
+                self.message_label.setText(
+                    "Focus session completed. Enjoy your break."
+                )
 
         else:
 
             self.mode = "work"
 
             self.message_label.setText(
-                "Break completed. Ready to focus again?"
+                "Break completed. Starting your next focus session."
             )
 
         self.remaining_seconds = self.get_current_duration()
 
-        if self.mode == "work":
-
-            self.selected_task_id = None
-            self.task_selector.setCurrentIndex(0)
-
+        # Keep the selected task. This lets the next focus session start
+        # automatically after the break without asking for the task again.
         self.update_display()
-
-    # =====================================
-    # DISPLAY UPDATE
-    # =====================================
+        self.start_timer()
 
     def update_display(self):
 
@@ -797,12 +808,13 @@ class PomodoroWidget(QWidget):
 
         if self.mode == "work":
             self.mode_label.setText("FOCUS SESSION")
-
+            phase_name = "Focus"
         elif self.mode == "short_break":
             self.mode_label.setText("SHORT BREAK")
-
+            phase_name = "Break"
         else:
             self.mode_label.setText("LONG BREAK")
+            phase_name = "Break"
 
         total_duration = self.get_current_duration()
 
@@ -819,3 +831,11 @@ class PomodoroWidget(QWidget):
             f"Completed focus sessions: "
             f"{self.completed_work_sessions}"
         )
+
+        # Keep the button label synchronized with the timer's current state.
+        if self.is_running:
+            self.start_button.setText(f"Pause {phase_name}")
+        elif self.remaining_seconds < total_duration:
+            self.start_button.setText(f"Resume {phase_name}")
+        else:
+            self.start_button.setText(f"Start {phase_name}")
