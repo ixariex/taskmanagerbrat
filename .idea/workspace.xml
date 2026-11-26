@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0c0f23d-7de3-4903-b716-6db1ba9618d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TaskForge/ui/silent_message_box.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskForge/database/data/taskforge.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskForge/ui/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/TaskForge/ui/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskForge/ui/pomodoro_widget.py" beforeDir="false" afterPath="$PROJECT_DIR$/TaskForge/ui/pomodoro_widget.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TaskForge/ui/task_dialog.py" beforeDir="false" afterPath="$PROJECT_DIR$/TaskForge/ui/task_dialog.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,29 +31,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.app.executor": "Run",
-    "Python.build_optimizer.executor": "Run",
-    "Python.main_window.executor": "Run",
-    "Python.pomodoro_preview.executor": "Run",
-    "Python.test_optimizer_bridge.executor": "Run",
-    "Python.test_optimizer_edge_cases.executor": "Run",
-    "Python.test_pomodoro_repository.executor": "Run",
-    "Python.test_pomodoro_statistics.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "F:/githubproj/taskmanagerbrat/TaskForge/ui",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.build_optimizer.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main_window.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pomodoro_preview.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_optimizer_bridge.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_optimizer_edge_cases.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_pomodoro_repository.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_pomodoro_statistics.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/githubproj/taskmanagerbrat/TaskForge/ui&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\githubproj\taskmanagerbrat\TaskForge\ui" />
