@@ -815,6 +815,7 @@ class UIParser(object):
             except KeyError: 
                 continue
 
+            # noinspection PyArgumentList
             handler(self, child)
 
     def _handle_widget(self, el):

@@ -5,6 +5,7 @@ description = "A desktop task manager built with Python, SQLite and PyQt6"
 requires-python = ">=3.10"
 dependencies = [
     "PyQt6>=6.6",
+    "pyqt6-sip>=13.13.1",
 ]
 
 [tool.uv]

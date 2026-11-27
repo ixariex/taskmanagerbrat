@@ -1,4 +1,3 @@
-
 DIALOG_STYLESHEET = """
 QDialog {
     background-color: #100D16;
